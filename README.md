@@ -13,10 +13,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installing
 
-* Git clone "this repository"
-* npm i 
+```sh
+$ git clone "this repo"
+```
+
+```sh
+$ npm i 
+```
+
 * Create .env and add your port.
-* npm run dev
+
+```sh
+$ npm run dev
+```
+
+
+
 
 
 ## Endpoints 
