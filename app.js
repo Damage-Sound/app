@@ -20,5 +20,5 @@ require('./configs/locals.config')(app)
 // Base URLS
 app.use('/', require('./routes/index.routes'))
 app.use('/', require('./routes/auth.routes'))
-
+app.use('/locate', require('./routes/location.routes'))
 module.exports = app
