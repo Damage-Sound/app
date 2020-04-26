@@ -16,6 +16,7 @@ require('./configs/passport.config')(app)
 require('./configs/preformatter.config')(app)
 require('./configs/views.configs')(app)
 require('./configs/locals.config')(app)
+require('./configs/cloudinary.config')(app)
 
 // Base URLS
 app.use('/', require('./routes/index.routes'))
