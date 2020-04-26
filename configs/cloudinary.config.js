@@ -5,13 +5,15 @@ const multer = require('multer')
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
     api_key: process.env.CLOUDINARY_KEY,
-    api_secret: process.env.CLOUDINARY_SECRET
+    api_secret: process.env.CLOUDINARY_SECRET,
+    resource_type: 'video' ,
 })
 
 const storage = cloudinaryStorage({
     cloudinary: cloudinary,
     folder: 'songs',
-    allowedFormats: ['mp3'],
+    allowedFormats: ['mp3', 'png', 'mpeg'],
+    resource_type: 'video',
     filename: function (req, file, callback) {
         callback(null, file.originalName)
     }
