@@ -8,20 +8,21 @@ const songSchema = new Schema({
         type: String,
         enum: ['bachata', 'alternative rock', 'hard rock', 'bossa nova', 'punk', 'blues', 'classical', 'country', 'dance', 'deep house', 'dubstep', 'techno', 'house', 'trance', 'electronic', 'hip-hop', 'rap', 'indie', 'jazz', 'flamenco', 'reggeaton', 'salsa', 'meditation', 'pop', 'progressive', 'r&b', 'soul', 'reggae', 'rock', 'metal']
     },
-    album: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Album'
-    }],
+    url: String,
     likes: Number,
     plays: {
-        type: Number,
+        plays: Number,
         locations: [{
             name: String,
             plays: Number,
         }]
     },
     comments: [{
-        comment: String
+        comment: String,
+        author: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
     }],
     cover: String
 

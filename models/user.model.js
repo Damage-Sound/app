@@ -7,7 +7,7 @@ const userSchema = new Schema({
     password: String,
     email: String,
     albums: [{
-        type: SchemaTypes.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Album'
     }],
     songs: [{
@@ -27,12 +27,12 @@ const userSchema = new Schema({
     comments: [{
         comment: String,
         author: {
-            type: SchemaTypesObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'User'
         }
     }],
     playlists: [{
-        type: SchemaTypesObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Playlist'
     }]
 }, {

@@ -5,15 +5,15 @@ const playlistSchema = new Schema({
 
     name: String,
     author: {
-        type: SchemaTypesObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     },
     songs: [{
-        type: SchemaTypesObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Song'
     }],
     followers: [{
-        type: SchemaTypesObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     }],
     likes: Number
