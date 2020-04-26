@@ -24,7 +24,7 @@ const users = []
 
 for (let i = 1; i <= 100; i++) {
 
-    users = [{
+    users.push({
         username: faker.internet.userName(),
         password: bcrypt.hashSync('sasasa', salt),
         email: faker.internet.email(),
@@ -76,23 +76,23 @@ for (let i = 1; i <= 100; i++) {
         likes: faker.random.number(),
         location: faker.address.country(),
         followers: [{
-                username: faker.internet.username()
+                username: faker.internet.userName()
             },
             {
-                username: faker.internet.username()
+                username: faker.internet.userName()
             },
             {
-                username: faker.internet.username()
+                username: faker.internet.userName()
             }
         ],
         following: [{
-                username: faker.internet.username()
+                username: faker.internet.userName()
             },
             {
-                username: faker.internet.username()
+                username: faker.internet.userName()
             },
             {
-                username: faker.internet.username()
+                username: faker.internet.userName()
             }
         ],
         comments: [{
@@ -161,21 +161,85 @@ for (let i = 1; i <= 100; i++) {
                 }
             ],
             followers: [{
-                    username: faker.internet.username()
+                    username: faker.internet.userName()
                 },
                 {
-                    username: faker.internet.username()
+                    username: faker.internet.userName()
                 },
                 {
-                    username: faker.internet.username()
+                    username: faker.internet.userName()
                 }
             ],
             likes: faker.random.number()
         }]
 
-    }]
-
-
+    })
 
 
 }
+
+
+const createSongs = users.map(user => {
+    const newSong = new Song(user.songs)
+    return newSong.save()
+        .then(song => {
+            return song.data
+        })
+        .catch(error => {
+            throw new Error(`Impossible to add the song. ${error}`)
+        })
+})
+
+const createAlbums = users.map(user => {
+    const newAlbum = new Album(user.albums)
+    return newAlbum.save()
+        .then(album => {
+            return album.data
+        })
+        .catch(error => {
+            throw new Error(`Imposible to add the album. ${error}`)
+        })
+})
+
+
+const createPlaylists = users.map(user => {
+    const newPlaylist = new Playlist(user.playlists)
+    return newPlaylist.save()
+        .then(playlist => {
+            return playlist.data
+        })
+        .catch(error => {
+            throw new Error(`Imposible to add the playlist. ${error}`)
+        })
+})
+
+
+let findSongs = Promise.all(createSongs, createAlbums, createPlaylists)
+    .then(songs => {
+        return users.map(user => {
+            return Song.find()
+                .then(song => {
+                    return song.data
+                })
+        })
+    })
+    .catch(error => {
+        throw new Error(error)
+    })
+
+
+
+const saveUsers = findSongs.then(findSongs => {
+    return Promise.all(findSongs)
+        .then(users => {
+            return users.map(user => {
+                const newUser = new User(user);
+                return newUser.save();
+            })
+        })
+}).then(savedUsers => {
+    Promise.all(savedUsers)
+        .then(users => console.log(`${users.length} users created`))
+        .then(() => mongoose.connection.close())
+        .catch(err => console.log("Error while saving the book: ", err))
+})
