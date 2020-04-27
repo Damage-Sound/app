@@ -11,7 +11,7 @@ const songSchema = new Schema({
     url: String,
     likes: Number,
     plays: {
-        total: Number,
+        plays: Number,
         locations: [{
             name: String,
             plays: Number,
@@ -24,10 +24,6 @@ const songSchema = new Schema({
             ref: 'User'
         }
     }],
-    author: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
     cover: String
 
 

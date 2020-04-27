@@ -105,7 +105,7 @@ User.create(users)
 //                 genre: 'house',
 //                 url: 'http://www.mariomayhem.com/downloads/sound_tracks/Super_Mario_Bros._1/01-main-theme-overworld.mp3',
 //                 likes: faker.random.number(),
-//                 plays:  {
+//                 plays:  {
 //                     plays: faker.random.number(),
 //                     location: [{
 //                         name: faker.address.country(),
@@ -127,7 +127,7 @@ User.create(users)
 //             genre: 'trance',
 //             url: 'http://www.mariomayhem.com/downloads/sound_tracks/Super_Mario_Bros._1/01-main-theme-overworld.mp3',
 //             likes: faker.random.number(),
-//             plays:  {
+//             plays:  {
 //                 plays: faker.random.number(),
 //                 location: [{
 //                     name: faker.address.country(),
@@ -193,7 +193,7 @@ User.create(users)
 //                     genre: 'trance',
 //                     url: 'http://www.mariomayhem.com/downloads/sound_tracks/Super_Mario_Bros._1/01-main-theme-overworld.mp3',
 //                     likes: faker.random.number(),
-//                     plays:  {
+//                     plays:  {
 //                         plays: faker.random.number(),
 //                         location: [{
 //                             name: faker.address.country(),
@@ -213,7 +213,7 @@ User.create(users)
 //                     genre: 'trance',
 //                     url: 'http://www.mariomayhem.com/downloads/sound_tracks/Super_Mario_Bros._1/01-main-theme-overworld.mp3',
 //                     likes: faker.random.number(),
-//                     plays:  {
+//                     plays:  {
 //                         plays: faker.random.number(),
 //                         location: [{
 //                             name: faker.address.country(),
