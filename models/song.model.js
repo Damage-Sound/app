@@ -4,15 +4,20 @@ const Schema = mongoose.Schema
 const songSchema = new Schema({
 
     name: String,
+    url: String,
+    likes: Number,
+    cover: String,
     genre: {
         type: String,
         enum: ['bachata', 'alternative rock', 'hard rock', 'bossa nova', 'punk', 'blues', 'classical', 'country', 'dance', 'deep house', 'dubstep', 'techno', 'house', 'trance', 'electronic', 'hip-hop', 'rap', 'indie', 'jazz', 'flamenco', 'reggeaton', 'salsa', 'meditation', 'pop', 'progressive', 'r&b', 'soul', 'reggae', 'rock', 'metal']
     },
-    url: String,
-    likes: Number,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     plays: {
         plays: Number,
-        locations: [{
+        locations: [{ 
             name: String,
             plays: Number,
         }]
@@ -24,7 +29,6 @@ const songSchema = new Schema({
             ref: 'User'
         }
     }],
-    cover: String
 
 
 }, {
