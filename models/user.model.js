@@ -6,14 +6,6 @@ const userSchema = new Schema({
     username: String,
     password: String,
     email: String,
-    albums: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Album'
-    }],
-    songs: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Song'
-    }],
     likes: Number,
     location: String,
     followers: [{
@@ -24,17 +16,7 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         res: 'User'
     }],
-    comments: [{
-        comment: String,
-        author: {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    }],
-    playlists: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Playlist'
-    }]
+    profileImg: String
 }, {
     timestamps: true
 })
