@@ -55,6 +55,22 @@ const createSong = (authorID) => {
     })
 }
 
+const albums = []
+
+const createAlbum = (songID, authorID) =>{
+    
+albums.push({
+
+    name: faker.random.word(),
+    likes: faker.random.number(),
+    cover: faker.image.abstract(),
+    songs: [songID],
+    genre: ['jazz'],
+    author: authorID
+})
+
+}
+
 User.create(users)
     .then(allUsers => {
         allUsers.forEach(user => {
@@ -62,4 +78,10 @@ User.create(users)
         });
     })
     .then(response => Song.create(songs))
+    .then(createdSongs => createdSongs.forEach(song => {
+        createAlbum(song.id, song.author)
+    }))
+    .then(response => Album.create(albums))
     .catch(error => console.log(error))
+
+

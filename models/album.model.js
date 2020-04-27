@@ -14,10 +14,10 @@ const albumSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Song'
     }],
-    author: [{
+    author: {
         type: Schema.Types.ObjectId,
         ref: 'User'
-    }],
+    },
 })
 
 const Album = mongoose.model('Album', albumSchema)
