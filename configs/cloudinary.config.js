@@ -12,7 +12,7 @@ cloudinary.config({
 const storage = cloudinaryStorage({
     cloudinary: cloudinary,
     folder: 'songs',
-    allowedFormats: ['mp3', 'png', 'mpeg'],
+    allowedFormats: ['mp3', 'png', 'mpeg', 'jpg', 'jpeg'],
     resource_type: 'video',
     filename: function (req, file, callback) {
         callback(null, file.originalName)

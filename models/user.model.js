@@ -16,7 +16,13 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         res: 'User'
     }],
-    profileImg: String
+    comments: [{
+        comment: String,
+        author: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    }],
 }, {
     timestamps: true
 })
