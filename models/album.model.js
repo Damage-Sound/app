@@ -13,7 +13,11 @@ const albumSchema = new Schema({
         ref: 'Song'
     }],
     likes: Number,
-
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    cover: String
 
 })
 
