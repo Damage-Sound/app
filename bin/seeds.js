@@ -36,8 +36,7 @@ for (let i = 1; i <= 5; i++) {
 const songs = []
 
 const createSong = (authorID) => {
-
-    console.log(authorID)
+    
     songs.push({
 
         name: faker.random.word(),
