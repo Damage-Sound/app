@@ -16,7 +16,7 @@ const salt = bcrypt.genSaltSync(bcryptSalt)
 
 const users = []
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 100; i++) {
 
     users.push({
 
@@ -36,7 +36,7 @@ for (let i = 1; i <= 5; i++) {
 const songs = []
 
 const createSong = (authorID) => {
-    
+
     songs.push({
 
         name: faker.random.word(),
@@ -57,19 +57,37 @@ const createSong = (authorID) => {
 
 const albums = []
 
-const createAlbum = (songID, authorID) =>{
-    
-albums.push({
+const createAlbum = (songID, authorID) => {
 
-    name: faker.random.word(),
-    likes: faker.random.number(),
-    cover: faker.image.abstract(),
-    songs: [songID],
-    genre: ['jazz'],
-    author: authorID
-})
+    albums.push({
+
+        name: faker.random.word(),
+        likes: faker.random.number(),
+        cover: faker.image.abstract(),
+        songs: [songID],
+        genre: ['jazz'],
+        author: authorID
+    })
+}
+
+
+const playlists = []
+
+const createPlaylist = (songId, authorId) => {
+
+    playlists.push({
+
+        name: faker.random.word(),
+        author: authorId,
+        likes: faker.random.number(),
+        songs: [songId],
+        followers: [],
+
+    })
 
 }
+
+
 
 User.create(users)
     .then(allUsers => {
@@ -80,8 +98,9 @@ User.create(users)
     .then(response => Song.create(songs))
     .then(createdSongs => createdSongs.forEach(song => {
         createAlbum(song.id, song.author)
+        createPlaylist(song.id, song.author)
     }))
     .then(response => Album.create(albums))
+    .then(response => Playlist.create(playlists))
+    .then(response => console.log('Ya se ha creado'))
     .catch(error => console.log(error))
-
-
