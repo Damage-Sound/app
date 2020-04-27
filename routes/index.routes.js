@@ -20,6 +20,14 @@ router.post('/upload', cloudinaryUploader.single('songFile', {resource_type: 'ra
 
     console.log(req.file)
     
+    // cloudinary.v2.uploader.upload("songs",
+    //     {
+    //         resource_type: "video",
+    //         public_id: "my_folder/my_sub_folder/my_dog",
+    //         overwrite: true,
+    //     },
+    //     function (error, result) { console.log(result, error) });
+
     // User.create({
     //     name: req.file.filename,
     //     path: req.file.url
