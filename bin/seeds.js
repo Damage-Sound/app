@@ -9,15 +9,9 @@ const Album = require('../models/album.model')
 
 mongoose.connect(`mongodb+srv://${process.env.MONGODBUSER}:${process.env.MONGODBPASSWORD}@damagesound-t1udi.gcp.mongodb.net/${process.env.DB}`, { useNewUrlParser: true, useUnifiedTopology: true })
 
-Song.collection.drop()
-Playlist.collection.drop()
-User.collection.drop()
-Album.collection.drop()
-
 const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 const salt = bcrypt.genSaltSync(bcryptSalt)
-
 
 
 const users = []
@@ -64,18 +58,31 @@ for (let i = 1; i <= 5; i++) {
 }
 
 
+// User.create(users)
+//     .then(response => console.log(response))
+//     .catch(error => console.log(error))
 
 
-User.create(users)
-    .then(allUsers => {
-        allUsers.forEach((elm, index) => {
-            songs[index].author = { username: elm.username, location: elm.location, id: elm.id }
-            Song.create(songs[index])
+const promises = [User.create(users), Song.create(songs)]
+Promise.all(promises)
+    .then(responses => responses[0].map((user, index) => Object.assign({}, responses[index], {author: user._id})))
+    .catch(error => console.log(error))
 
-        })
-    })
-    .then((songCreated) => console.log('Songs created', songCreated))
-    .catch(err => console.log(`Ups, something wrong happenedL ${err}`))
+// User.create(users)
+//     .then(allUsers => {
+//         // allUsers.forEach((user, index) => {
+//         //     songs[index].author = { username: user.username, location: user.location, id: user.id }
+//         //     Song.create(songs[index])
+//         //         .then(songCreated => {
+//         //             console.log("song Created: ", songCreated)
+//         //             console.log("User: ", user)
+//         //         })
+
+//         // })
+//         console.log(allUsers)
+//     })
+//     // .then((response) => console.log('Response', response))
+//     .catch(err => console.log(`Ups, something wrong happenedL ${err}`))
 
 
 // Song.create(songs)
