@@ -6,14 +6,17 @@ cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
     api_key: process.env.CLOUDINARY_KEY,
     api_secret: process.env.CLOUDINARY_SECRET,
-    resource_type: 'video' ,
 })
 
-const storage = cloudinaryStorage({
+
+var storage = cloudinaryStorage({
     cloudinary: cloudinary,
-    folder: 'songs',
-    allowedFormats: ['mp3', 'png', 'mpeg', 'jpg', 'jpeg'],
-    resource_type: 'video',
+    params: {
+        folder: 'songs',
+        allowedFormats: ['mp3'],
+        format: 'mp3',
+        resource_type: 'video'
+    },
     filename: function (req, file, callback) {
         callback(null, file.originalName)
     }
