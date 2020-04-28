@@ -1,0 +1,31 @@
+{{#each allSongs}}
+        <div class="discover-card">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <img class= 'coverImg' src="{{cover}}" alt="Cover">
+                    <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{likes}}</p>
+
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <h3>{{name}}</h3>
+                    <button type="submit" class="play-button" media="{{url}}"><img class="playImg" src="/images/play.svg" alt="play"></button>            
+                    <small>{{genre}}</small>
+                    <a href="/profile/:id">{{author.username}}</a>
+                    
+                    
+                    
+                </div>
+                
+            
+            </div>
+
+        </div>
+
+{{/each}}
+<script src="/javascripts/webplayer.js"></script>
