@@ -3,21 +3,14 @@ const router = express.Router()
 const multer = require('multer');
 const upload = multer()
 const User = require('../models/user.model');
-const cloudinaryUploader = require('../configs/cloudinary.config')
+const cloudinaryMusicUploader = require('../configs/cloudinaryMusic.config')
+const cloudinaryImgUploader = require('../configs/cloudinaryImg.config')
 const bodyParser = require('body-parser')
 const cloudinary = require('cloudinary')
 const axios = require('axios');
 
 
 router.get('/', (req, res) => res.render('index'))
-
-router.get('/upload', (req, res, next) => {
-    res.render('upload')
-})
-
-router.post('/upload', cloudinaryUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
-    console.log(req.file)
-})
 
 
 router.get('/play', (req, res, next) => {
