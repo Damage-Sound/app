@@ -22,4 +22,5 @@ app.use('/', require('./routes/index.routes'))
 app.use('/', require('./routes/auth.routes'))
 app.use('/locate', require('./routes/location.routes'))
 app.use('/rank', require('./routes/ranking.routes'))
+app.use('/discover', require('./routes/discover.routes'))
 module.exports = app
