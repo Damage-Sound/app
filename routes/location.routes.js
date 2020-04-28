@@ -3,7 +3,7 @@ const router = express.Router()
 const passport = require("passport")
 const axios = require('axios')
 
-router.get('/', (req, res) => res.render("location"))
+router.get('/', (req, res) => res.render('location'))
 
 router.post('/', (req, res, next) => {
     //axiosLocation.post('/')

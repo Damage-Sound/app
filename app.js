@@ -21,4 +21,5 @@ require('./configs/locals.config')(app)
 app.use('/', require('./routes/index.routes'))
 app.use('/', require('./routes/auth.routes'))
 app.use('/locate', require('./routes/location.routes'))
+app.use('/rank', require('./routes/ranking.routes'))
 module.exports = app

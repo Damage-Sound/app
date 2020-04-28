@@ -40,15 +40,15 @@ const createSong = (authorID) => {
     songs.push({
 
         name: faker.random.word(),
-        genre: 'bachata',
+        genre: 'pop',
         likes: faker.random.number(),
-        plays: [{
+        plays: {
             total: faker.random.number(),
             locations: [{
                 name: faker.address.city(),
                 plays: faker.random.number()
             }]
-        }],
+        },
         comments: [],
         cover: faker.image.abstract(),
         author: authorID
@@ -65,7 +65,7 @@ const createAlbum = (songID, authorID) => {
         likes: faker.random.number(),
         cover: faker.image.abstract(),
         songs: [songID],
-        genre: ['jazz'],
+        genre: ['indie'],
         author: authorID
     })
 }
@@ -102,5 +102,8 @@ User.create(users)
     }))
     .then(response => Album.create(albums))
     .then(response => Playlist.create(playlists))
-    .then(response => console.log('Ya se ha creado'))
+    .then(response => {
+        console.log('Ya se ha creado')
+        mongoose.connection.close()
+    })
     .catch(error => console.log(error))
