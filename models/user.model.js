@@ -9,14 +9,20 @@ const userSchema = new Schema({
     profileImg: String,
     likes: Number,
     location: String,
-    followers: [{
-        type: Schema.Types.ObjectId,
-        res: 'User'
-    }],
-    following: [{
-        type: Schema.Types.ObjectId,
-        res: 'User'
-    }],
+    followers: {
+        total: Number,
+        followers: [{
+            type: Schema.Types.ObjectId,
+            res: 'User'
+        }]
+    },
+    following: {
+        total: Number,
+        following: [{
+            type: Schema.Types.ObjectId,
+            res: 'User'
+        }]
+    },
     comments: [{
         comment: String,
         author: {
