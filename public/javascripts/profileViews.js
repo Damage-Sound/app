@@ -4,7 +4,12 @@ const profileView = (view, data) => {
         case 'playlists':
             profilePlaylists(data)
             break
-    
+        
+        
+        case 'error':
+            // profileError()
+            break
+        
         default:
             break;
     }
