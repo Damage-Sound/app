@@ -17,7 +17,7 @@ const navAction = (event) => {
     console.log("hola")
     axios({
         method: 'get',
-        url: `localhost:3000/profile/api-request/${apiMethod}`
+        url: `http://damage-sound.herokuapp.com/profile/api-request/${apiMethod}`
     })
         .then(response => console.log(response))
         .catch(error => console.log(error))

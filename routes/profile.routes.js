@@ -15,7 +15,6 @@ const bcryptSalt = 10
 // Login Controller
 const checkLoggedIn = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login')
 
-
 router.get('/', checkLoggedIn, (req, res, next) => {
 
     let userInfo
