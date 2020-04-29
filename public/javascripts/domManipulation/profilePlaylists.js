@@ -18,7 +18,14 @@ const profilePlaylists = (data) => {
         playlistContainer.appendChild(playlistTitle)
         playlistContainer.appendChild(playlistLikes)
 
-        container.appendChild(playlistContainer)
+        
+        const linkToPlaylist = document.createElement('a')
+        linkToPlaylist.classList += 'playlist-link'
+        linkToPlaylist.setAttribute('href', `http://damage-sound.herokuapp.com/playlist-detail/?${playlist.id}`)
+        
+        linkToPlaylist.appendChild(playlistContainer)
+        container.appendChild(linkToPlaylist)
+
     })
 }
 

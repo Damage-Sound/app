@@ -14,12 +14,6 @@ const songContainerCreator = (song) => {
     const songLikes = document.createElement('p')
     songLikes.classList += 'song-likes'
     songLikes.innerHTML = song.likes
-    
-    // const songAuthor = document.createElement('h4')
-    // songAuthor.classList += 'song-author'
-    // songAuthor.innerHTML = song.author
-    // console.log('Author CREATED')
-    // console.log(songAuthor)
 
     // const songAlbum = document.createElement('h4')
     // songAlbum.classList += 'song-album'
