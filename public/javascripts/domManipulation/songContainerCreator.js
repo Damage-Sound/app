@@ -31,7 +31,7 @@ const songContainerCreator = (song) => {
     playButton.setAttribute('media', song.url)
     playButton.innerHTML = 'Play'
     console.log('Button CREATED')
-    console.log(songButton)
+    console.log(playButton)
 
     songContainer.appendChild(playButton)
     songContainer.appendChild(songTitle)
