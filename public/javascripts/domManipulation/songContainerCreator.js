@@ -30,6 +30,7 @@ const songContainerCreator = (song) => {
     playButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'playButton')
     playButton.setAttribute('media', song.url)
     playButton.innerHTML = 'Play'
+    playButton.addEventListener('click', event => play(event))
     console.log('Button CREATED')
     console.log(playButton)
 
