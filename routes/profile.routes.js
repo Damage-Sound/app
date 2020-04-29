@@ -33,6 +33,14 @@ router.get('/', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
+
+router.get('/playlists', checkLoggedIn, (req, res, next) => {
+
+    Playlist.find({ author: req.user.id })
+        .then(foundPlaylists => res.json(foundPlaylists))
+        .catch(error => next(error))
+})
+
 router.post('/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
