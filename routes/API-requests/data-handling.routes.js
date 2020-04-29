@@ -44,4 +44,18 @@ router.get('/', (req, res, next) => {
 
 })
 
+router.get('/play', (req, res, next) => {
+
+    const {songID} =  req.query
+    
+    Song.findById(songID)
+    .then(foundSong => {
+        const likes  = foundSong.likes  +1
+        Song.findByIdAndUpdate(foundSong.id, {likes})
+    })
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+    
+})
+
 module.exports = router

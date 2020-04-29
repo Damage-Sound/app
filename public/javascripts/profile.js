@@ -20,6 +20,6 @@ const navAction = (event) => {
         url: `localhost:3000/profile/api-request/${apiMethod}`
     })
         .then(response => console.log(response))
-        .catch(error => console.log(error))
+        .catch(error => console.log(error)) 
 
 }

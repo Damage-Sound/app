@@ -10,7 +10,7 @@ const Playlist = require('../models/playlist.model')
 const ObjectId = require('mongoose').Types.ObjectId
 const passport = require('passport')
 const bcrypt = require('bcrypt')
-const bcryptSalt = 10
+const bcryptSalt = 10 
 
 // Login Controller
 const checkLoggedIn = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login')
