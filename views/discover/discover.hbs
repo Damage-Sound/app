@@ -21,14 +21,44 @@
 
         <h5>Genres</h5>
         <div class="row">
-            <ul>
-                <li><a href="#">Techno</a></li>
-                <li><a href="#">Dance</a></li>
-                <li><a href="#">Flamenco</a></li>            
-                <li><a href="#">Jazz</a></li>
-                <li><a href="#">Rap</a></li>
-                <li><a href="#">Reggeaton</a></li>
+            <form action="/discover/{{destination}}" method="GET">
+                <ul>
+                <li><input type="checkbox" name="bachata" value ="bachata"> Bachata</li>
+                <li><input type="checkbox" name="alternative rock" value ="alternative rock"> Alternative rock</li>
+                <li><input type="checkbox" name="hard rock" value ="hard rock"> Hard Rock</li>
+                <li><input type="checkbox" name="bossa nova" value ="bossa nova"> Bossa nova</li>
+                <li><input type="checkbox" name="punk" value ="punk"> Punk</li>
+                <li><input type="checkbox" name="blues" value ="blues"> Blues</li>
+                <li><input type="checkbox" name="classical" value ="classical"> Classical</li>
+                <li><input type="checkbox" name="country" value ="country"> Country</li>
+                <li><input type="checkbox" name="dance" value ="dance"> Dance</li>
+                <li><input type="checkbox" name="deep house" value ="deep house"> Deep House</li>
+                <li><input type="checkbox" name="dupstep" value ="dupstep"> Dupstep</li>
+                <li><input type="checkbox" name="techno" value ="techno"> Techno</li>
+                <li><input type="checkbox" name="house" value ="house"> House</li>
+                <li><input type="checkbox" name="trance" value ="trance"> Trance</li>
+                <li><input type="checkbox" name="electronic" value ="electronic"> Electronic</li>
+                <li><input type="checkbox" name="hip-hop" value ="hip-hop"> Hip-hop</li>
+                <li><input type="checkbox" name="rap" value ="rap"> Rap</li>
+                <li><input type="checkbox" name="indie" value ="indie"> Indie</li>
+                <li><input type="checkbox" name="jazz" value ="jazz"> Jazz</li>
+                <li><input type="checkbox" name="flamenco" value ="flamenco"> Flamenco</li>
+                <li><input type="checkbox" name="reggaeton" value ="reggaeton"> Reggeaton</li>
+                <li><input type="checkbox" name="salsa" value ="salsa"> Salsa</li>
+                <li><input type="checkbox" name="meditation" value ="meditation"> Meditation</li>
+                <li><input type="checkbox" name="pop" value ="pop"> Pop</li>
+                <li><input type="checkbox" name="progressive" value ="progressive"> Progressive</li>
+                <li><input type="checkbox" name="r&b" value ="r&b"> R&B</li>
+                <li><input type="checkbox" name="soul" value ="soul"> Soul</li>
+                <li><input type="checkbox" name="reggae" value ="reggae"> Reggae</li>
+                <li><input type="checkbox" name="rock" value ="rock"> Rock</li>
+                <li><input type="checkbox" name="metal" value ="metal"> Metal</li>
+                <li><button class="btn btn-md btn-dark" type="submit">Send</button></li>
+                
             </ul>
+            </form>
+            
+            
         </div>
 
     </div>

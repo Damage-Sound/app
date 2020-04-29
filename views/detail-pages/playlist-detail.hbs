@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+
+            <img src="{{author.profileImg}}" alt="img">
+            <h4>{{name}}</h4>
+            <small>{{author.name}}</small> <small>{{likes}}</small>
+        </div>
+        <div class="col">
+
+                {{#each songs}}
+                    <img class="coverImg" src="{{cover}}" alt="cover">
+                    <li><button type="submit" class="play-button list-button playButton" media="{{url}}">Play {{name}}</button></li>
+                    <small>{{plays.total}} plays</small><small></small>
+                    <small><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button>{{likes}}</small>
+                    <hr>
+                {{/each}}
+                </ul>
+
+        </div>
+
+    </div>
+
+
+</div>
