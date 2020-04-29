@@ -4,10 +4,14 @@ const profileView = (view, data) => {
     while (container.firstChild) {
         container.removeChild(container.firstChild)
     }
-    
+
     switch (view) {
         case 'playlists':
             profilePlaylists(data)
+            break
+        
+        case 'albums':
+            profileAlbums(data)
             break
 
         case 'songs':
