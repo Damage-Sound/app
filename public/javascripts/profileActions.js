@@ -9,11 +9,15 @@ window.onload = () => {
 
 const navAction = (event) => {
     const apiMethod = event.target.getAttribute('api')
-    console.log("hola")
     axios({
         method: 'get',
         url: `http://damage-sound.herokuapp.com/profile/${apiMethod}`
     })
-        .then(response => profileView(apiMethod, response.data))
+        .then(response => {
+            console.log('de profileActions a profileView')
+            console.log('method: ', apiMethod)
+            console.log('data: ', response.data)
+            profileView(apiMethod, response.data)
+        })
         .catch(error => profileView('error'))
 }
