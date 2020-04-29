@@ -38,13 +38,14 @@ router.get('/playlists', checkLoggedIn, (req, res, next) => {
 
     Playlist.find({ author: req.user.id })
         .populate('songs')
-        .then(foundPlaylists => res.json(foundPlaylists))
+        .then(foundPlaylists => res.json({ foundPlaylists }))
         .catch(error => next(error))
 })
 
 router.get('/albums', checkLoggedIn, (req, res, next) => {
 
     Album.find({ author: req.user.id })
+        .populate('songs')
         .then(foundAlbums => res.json(foundAlbums))
         .catch(error => next(error))
 })
@@ -52,6 +53,7 @@ router.get('/albums', checkLoggedIn, (req, res, next) => {
 router.get('/songs', checkLoggedIn, (req, res, next) => {
 
     Song.find({ author: req.user.id })
+        .populate('comments')
         .then(foundSongs => res.json(foundSongs))
         .catch(error => next(error))
 })
@@ -59,7 +61,7 @@ router.get('/songs', checkLoggedIn, (req, res, next) => {
 router.get('/comments', checkLoggedIn, (req, res, next) => {
 
     User.findById(req.user.id)
-        .populate('comments')
+        .populate('author')
         .then(foundUser => res.json(foundUser.comments))
         .catch(error => next(error))
 })
