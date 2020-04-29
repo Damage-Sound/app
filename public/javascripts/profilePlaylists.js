@@ -33,7 +33,7 @@ const profilePlaylists = (data) => {
         console.log('en esto:')
         console.log(container)
 
-        container.appendChild(playListContainer)
+        container.appendChild(playlistContainer)
 
 
         // const divPlaylistInfo = document.createElement('div')
