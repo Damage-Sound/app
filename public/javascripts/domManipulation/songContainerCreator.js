@@ -28,10 +28,8 @@ const songContainerCreator = (song) => {
 
     songContainer.appendChild(playButton)
     songContainer.appendChild(songTitle)
-    //songContainer.appendChild(songAuthor)
+
     //songContainer.appendChild(songAlbum)
 
-    console.log('before returning')
-    console.log(songContainer)
     return songContainer
 }
