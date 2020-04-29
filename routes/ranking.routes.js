@@ -2,26 +2,33 @@ const express = require("express")
 const router = express.Router()
 const passport = require("passport")
 const axios = require('axios')
+const Song = require('../models/song.model')
+
 
 router.get('/', (req, res) => res.render('ranking'))
 
-// router.post('/', (req, res, next) => {
-//     //axiosLocation.post('/')
-//     axios({
-//         method: 'post',
-//         url: `https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.GOOGLEMAPSAPIKEY}`
-//     })
-//     .then(location => location.data.location)
-//     .then(coordinates => {
-//         console.log('hola',coordinates)
-//         return axios({
-//             method: 'post',
-//             url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinates.lat},${coordinates.lng}&key=${process.env.GOOGLEMAPSAPIKEY}`
-//         })
-//     })
-//     .then(response => console.log('Esto es el pais', response.data.results[response.data.results.length-2].address_components[0].long_name))
-//     .catch(err => console.log(err))
+router.post('/likes', (req, res, next) => {
     
-// })
+    Song
+      .find()
+      .sort({likes: -1})
+      .limit(10)
+           .then(theData => res.render('ranking', {theData}))
+           .catch(error => next(error))
+})
+router.post('/plays', (req, res, next) => {
+    
+    Song
+      .find()
+      .sort({plays: -1})
+      .limit(10)
+           .then(theData => res.render('ranking', {theData}))
+           .catch(error => next(error))
+})
+
+
+
 
 module.exports = router
+
+//forEach(elm => console.log(parseInt(elm.plays.total), elm.name)))

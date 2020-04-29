@@ -1,6 +1,36 @@
-<h1>Hey you are in RANKING view</h1>
+<div class="container">
 
-    <form action="/rank" method="POST">
-        <button type="submit" class="btn btn-dark btn-block btn-lg">The most listened</button>            
-        <button type="submit" class="btn btn-dark btn-block btn-lg">The ones people prefer</button>            
+    <h1>Ranking</h1>
+    <p>The most best tracks on Damage Sound</p>
+
+    <form action="/rank/likes" method="POST">
+        <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by likes</button>            
     </form>
+    <form action="/rank/plays" method="POST">
+        <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by plays</button>
+    </form>
+    <section class="rank-content">
+
+        {{#each theData}}
+        <div class="cards">
+
+                <figure>
+                    <img src="{{cover}}" alt="Song Image" class="img-rank">
+                </figure>
+
+                <article>
+                    <p><strong>Name:</strong> {{name}}</p>
+                    <p><strong>Likes:</strong> {{likes}}</p>
+                    <p><strong>Plays:</strong> {{plays.total}}</p>
+                    <button type="submit" class="playButton" media="{{url}}">Click to Play</button>            
+                    <button type="submit" class="">Add to Playlist</button>            
+
+                </article>
+
+        </div>
+        {{/each}}
+    </section>
+</div>  
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/webplayer.js"></script>

@@ -16,7 +16,7 @@ const songSchema = new Schema({
         ref: 'User'
     },
     plays: {
-        plays: Number,
+        total: Number,
         locations: [{ 
             name: String,
             plays: Number,
