@@ -11,7 +11,6 @@ const profileView = (view, data) => {
             break
         
         case 'albums':
-            console.log('hola?')
             profileAlbums(data)
             break
 
@@ -20,7 +19,10 @@ const profileView = (view, data) => {
             break
 
         case 'error':
-            // profileError()
+            const errorMsg = document.createElement('h3')
+            errorMsg.classList += 'errorMsg'
+            errorMsg.innerHTML = 'Sorry, an error has occured'
+            container.appendChild(errorMsg)
             break
 
         default:
