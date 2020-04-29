@@ -1,4 +1,5 @@
 const songContainerCreator = (song) => {
+    console.log('CREATING SONG')
 
     const songContainer = document.createElement('div')
     songContainer.classList += 'song-container'
