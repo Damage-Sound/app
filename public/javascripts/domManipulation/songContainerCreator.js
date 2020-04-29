@@ -6,6 +6,14 @@ const songContainerCreator = (song) => {
     const songTitle = document.createElement('h3')
     songTitle.classList += 'song-title'
     songTitle.innerHTML = song.name
+
+    const songPlays = document.createElement('p')
+    songPlays.classList += 'song-plays'
+    songPlays.innerHTML = song.plays.total
+
+    const songLikes = document.createElement('p')
+    songLikes.classList += 'song-likes'
+    songLikes.innerHTML = song.likes
     
     // const songAuthor = document.createElement('h4')
     // songAuthor.classList += 'song-author'
