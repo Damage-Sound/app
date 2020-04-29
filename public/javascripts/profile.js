@@ -7,11 +7,6 @@ window.onload = () => {
     })
 }
 
-// Esto va a haber que hacerlo en métodos, con un archivo separado, como en el ejemplo de Germán
-//links: 
-// https://github.com/Togeri/lab-ajax-crud-characters/blob/master/public/javascript/APIHandler.js
-//https://github.com/Togeri/lab-ajax-crud-characters/blob/master/public/javascript/index.js
-
 const navAction = (event) => {
     const apiMethod = event.target.getAttribute('api')
     console.log("hola")
@@ -21,5 +16,4 @@ const navAction = (event) => {
     })
         .then(response => console.log(response))
         .catch(error => console.log(error))
-
 }
