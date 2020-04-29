@@ -19,7 +19,7 @@ router.post('/', (req, res, next) => {
             url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinates.lat},${coordinates.lng}&key=${process.env.GOOGLEMAPSAPIKEY}`
         })
     })
-    .then(response => console.log('Esto es el pais', response.data.results[response.data.results.length-2].address_components[0].long_name))
+    .then(response => console.log('Esta es la ciudad donde se encuentra el usuario:', response.data.results[response.data.results.length-2].address_components[0].long_name))
     .catch(err => console.log(err))
     
 })
