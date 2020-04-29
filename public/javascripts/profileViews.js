@@ -6,15 +6,12 @@ const profileView = (view, data) => {
             break
         
         case 'songs':
-            console.log("ENTRANDO")
-            data.forEach(song => {
-                const container = document.querySelector('.profile-actions')
-                console.log(container)
-                songContainerCreator(song)
-                console.log('after returning')
-                console.log(songContainerCreator(song))
-                container.appendChild(songContainerCreator(song))
-            })
+
+            const container = document.querySelector('.profile-actions')
+            while (container.firstChild) {
+                container.removeChild(container.firstChild)
+            }
+            data.forEach(song => container.appendChild(songContainerCreator(song)))
             break
         
         case 'error':

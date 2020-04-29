@@ -54,7 +54,7 @@ router.get('/songs', checkLoggedIn, (req, res, next) => {
 
     Song.find({ author: req.user.id })
         .populate('comments')
-        .then(foundSongs => res.json(foundSongs))
+        .then(foundSongs => res.json({foundSongs, author: req.user.username}))
         .catch(error => next(error))
 })
 
