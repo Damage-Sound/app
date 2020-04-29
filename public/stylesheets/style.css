@@ -1,23 +1,116 @@
 body {
-  font-weight: 200; }
+    font-weight: 200;
+}
 
-h1, h2, h3 {
-  font-weight: 200; }
+h1,
+h2,
+h3 {
+    font-weight: 200;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: grey;
+}
 
 .navbar {
-  margin-bottom: 70px; }
+    margin-bottom: 70px;
+}
 
 #errorMsg {
-  background-color: red;
-  color: white;
-  font-weight: 400;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 5px; }
+    background-color: red;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 5px;
+}
 
 .profileImg {
-  width: 100px;
-  background-color: #511845;
-  border-radius: 50%; }
+    width: 100px;
+    background-color: #511845;
+    border-radius: 50%;
+}
+
+.coverImg {
+    width: 200px;
+    background-color: #511845;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+
+.play-button {
+    padding: 0;
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.play-button-song {
+    background-color: none;
+}
+
+.list-button {
+    display: block;
+    width: 100%;
+}
+
+.playImg {
+    width: 60px;
+}
+
+.playListImg {
+    width: 15px;
+}
+
+.flaticon-img {
+    width: 15px;
+    margin-right: 5px;
+    background-size: cover;
+    transition: all .4s;
+}
+
+.flaticon-img:hover,
+.flaticon-img:focus {
+    background-image: url("/images/heart2.svg");
+}
+
+audio {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar-discover ul a {
+    color: #424242;
+}
+
+.navbar-discover ul a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    background-color: none;
+    border: none;
+}
+
+.discover-container ul {
+    list-style: none;
+}
+
+.discover-card {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
 
 /*# sourceMappingURL=style.css.map */

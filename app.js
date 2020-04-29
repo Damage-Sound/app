@@ -26,4 +26,5 @@ app.use('/profile', require('./routes/profile.routes'))
 app.use('/profile/api-request', require('./routes/API-requests/user-data-handling.routes'))
 app.use('/api', require('./routes/API-requests/data-handling.routes'))
 
+app.use('/discover', require('./routes/discover.routes'))
 module.exports = app

@@ -17,7 +17,7 @@ const songSchema = new Schema({
     },
     plays: {
         total: Number,
-        locations: [{ 
+        locations: [{
             name: String,
             plays: Number,
         }]

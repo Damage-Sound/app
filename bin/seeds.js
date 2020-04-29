@@ -16,7 +16,7 @@ const salt = bcrypt.genSaltSync(bcryptSalt)
 
 const users = []
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 20; i++) {
 
     users.push({
 
@@ -141,4 +141,3 @@ User.create(users)
         mongoose.connection.close()
     })
     .catch(error => console.log(error))
-

@@ -21,7 +21,7 @@ router.get('/', (req, res) => res.render('ranking'))
 //     })
 //     .then(response => console.log('Esto es el pais', response.data.results[response.data.results.length-2].address_components[0].long_name))
 //     .catch(err => console.log(err))
-    
+
 // })
 
 module.exports = router
