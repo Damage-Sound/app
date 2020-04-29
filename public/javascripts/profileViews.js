@@ -6,11 +6,10 @@ const profileView = (view, data) => {
             break
         
         case 'songs':
-
             const container = document.querySelector('.profile-actions')
-            while (container.firstChild) {
-                container.removeChild(container.firstChild)
-            }
+            // while (container.firstChild) {
+            //     container.removeChild(container.firstChild)
+            // }
             data.forEach(song => container.appendChild(songContainerCreator(song)))
             break
         
