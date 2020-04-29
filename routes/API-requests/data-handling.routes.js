@@ -52,7 +52,7 @@ Song.findById(songID)
         const likes = foundSong.likes + 1
         Song.findByIdAndUpdate(foundSong.id, { likes })
     })
-    .then(response => console.log(response))
+    .then(response => res.json(response))
     .catch(error => console.log(error))
 })
 
