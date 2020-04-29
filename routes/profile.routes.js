@@ -41,6 +41,52 @@ router.get('/playlists', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
+router.get('/albums', checkLoggedIn, (req, res, next) => {
+
+    Album.find({ author: req.user.id })
+        .then(foundAlbums => res.json(foundAlbums))
+        .catch(error => next(error))
+})
+
+router.get('/songs', checkLoggedIn, (req, res, next) => {
+
+    Song.find({ author: req.user.id })
+        .then(foundSongs => res.json(foundSongs))
+        .catch(error => next(error))
+})
+
+router.get('/comments', checkLoggedIn, (req, res, next) => {
+
+    User.findById(req.user.id)
+        .populate('comments')
+        .then(foundUser => res.json(foundUser.comments))
+        .catch(error => next(error))
+})
+
+
+router.get('/followers', checkLoggedIn, (req, res, next) => {
+
+    User.findById(req.user.id)
+        .populate('followers')
+        .then(foundUser => res.json(foundUser.followers))
+        .catch(error => next(error))
+})
+
+router.get('/following', checkLoggedIn, (req, res, next) => {
+
+    User.findById(req.user.id)
+        .populate('following')
+        .then(foundUser => res.json(foundUser.following))
+        .catch(error => next(error))
+})
+
+// router.get('/statistics', checkLoggedIn, (req, res, next) => {
+
+//     Playlist.find({ author: req.user.id })
+//         .then(foundPlaylists => res.json(foundPlaylists))
+//         .catch(error => next(error))
+// })
+
 router.post('/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
