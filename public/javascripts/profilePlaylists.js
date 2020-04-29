@@ -23,9 +23,17 @@ const profilePlaylists = (data) => {
         playlistPlays.classList += 'playlist-plays'
         playlistPlays.innerHTML = playlist.plays.total
 
+        console.log('1')
+
         playlistContainer.appendChild(playlistTitle)
+        console.log('2')
+
         playlistContainer.appendChild(playlistLikes)
+        console.log('3')
+
         playlistContainer.appendChild(playlistPlays)
+        console.log('4')
+
 
         console.log('se va a meter esto:')
         console.log(playListContainer)
