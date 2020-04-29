@@ -10,29 +10,29 @@ const profilePlaylists = (data) => {
 
         const playlistContainer = document.createElement('div')
         playlistContainer.classList += 'playlist-container'
+        console.log('1')
 
         const playlistTitle = document.createElement('h2')
         playlistTitle.classList += 'playlist-title'
         playlistTitle.innerHTML = playlist.name
+        console.log('2')
 
         const playlistLikes = document.createElement('p')
         playlistLikes.classList += 'playlist-likes'
         playlistLikes.innerHTML = playlist.likes
+        console.log('3')
 
         const playlistPlays = document.createElement('p')
         playlistPlays.classList += 'playlist-plays'
         playlistPlays.innerHTML = playlist.plays.total
+        console.log('4')
 
-        console.log('1')
 
         playlistContainer.appendChild(playlistTitle)
-        console.log('2')
 
         playlistContainer.appendChild(playlistLikes)
-        console.log('3')
 
         playlistContainer.appendChild(playlistPlays)
-        console.log('4')
 
 
         console.log('se va a meter esto:')
