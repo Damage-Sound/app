@@ -5,6 +5,11 @@ const profileView = (view, data) => {
             profilePlaylists(data)
             break
         
+        case 'songs':
+            data.forEach(song => {
+                songContainerCreator(song)
+            });
+            break
         
         case 'error':
             // profileError()

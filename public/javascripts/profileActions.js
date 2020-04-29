@@ -13,6 +13,9 @@ const navAction = (event) => {
         method: 'get',
         url: `http://damage-sound.herokuapp.com/profile/${apiMethod}`
     })
-        .then(response => profileView(apiMethod, response.data.foundPlaylists))
+        .then(response => {
+            console.log(response.data)
+            profileView(apiMethod, response.data)
+        })
         .catch(error => profileView('error'))
 }
