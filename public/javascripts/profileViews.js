@@ -11,6 +11,7 @@ const profileView = (view, data) => {
             break
         
         case 'albums':
+            console.log('hola?')
             profileAlbums(data)
             break
 
