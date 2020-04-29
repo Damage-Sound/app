@@ -1,0 +1,71 @@
+<a href="/discover"><h1>Discover</h1></a>
+
+<div class="container discover-container">
+
+
+
+<div class="row">
+
+
+
+    <div class="col-md-4 navbar-discover">
+
+        <div class="row">
+            <ul>
+                <li><a href="/discover/albums">Albums</a></li>
+                <li><a href="/discover/playlists">Playlists</a></li>
+                <li><a href="/discover/songs">Canciones</a></li>
+                
+            </ul>
+        </div>
+
+        <h5>Genres</h5>
+        <div class="row">
+            <ul>
+                <li><a href="#">Techno</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Flamenco</a></li>            
+                <li><a href="#">Jazz</a></li>
+                <li><a href="#">Rap</a></li>
+                <li><a href="#">Reggeaton</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="col-md-8">
+
+        {{#if allUsers}}
+        {{> discoverArtists}}
+        {{/if}}
+
+        {{#if allAlbums}}
+        {{> discoverAlbums}}
+        {{/if}}
+
+        {{#if allPlaylists}}
+        {{> discoverPlaylists}}
+        {{/if}}
+
+        {{#if allSongs}}
+        {{> discoverSongs}}
+        {{/if}}
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/webplayer.js"></script>

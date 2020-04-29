@@ -1,0 +1,44 @@
+<div class="profile-options">
+
+    <section>
+        <div class="profile-options-navigation">
+            <nav>
+                <ul class="nav-actions">
+                    <li user="{{userInfo.id}}" api="playlists" id="nav-playlists">Playlists</li>
+                    <li user="{{userInfo.id}}" api="albums" id="nav-albums">Albums</li>
+                    <li user="{{userInfo.id}}" api="songs" id="nav-songs">Songs</li>
+                    <li user="{{userInfo.id}}" api="comments" id="nav-comments">Comments</li>
+                    <li user="{{userInfo.id}}" api="followers" id="nav-followers">Followers</li>
+                    <li user="{{userInfo.id}}" api="following" id="nav-following">Following</li>
+                    <li user="{{userInfo.id}}" api="statistics" id="nav-statistics">Statistics</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="profile-info">
+            <figure class="profileImg-container">
+                <img class="profileImg" src="{{userInfo.profileImg}}" alt="Profile Logo">
+            </figure>
+            <article class="profileInfo-container">
+                <p class="name">{{userInfo.username}}</p>
+                <p class="name">{{userInfo.likes}}</p>
+                <p class="name">{{userInfo.followers.total}}</p>
+            </article>
+        </div>
+
+        <div class="profile-upload-song">
+            <article>
+                <button id="upload-song-button">Upload Song</button>
+            </article>
+        </div>
+    </section>
+</div>
+
+<div class="profile-actions">
+
+</div>
+
+K PASO WEII {{userInfo.username}}
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="javascripts/profile.js"></script>

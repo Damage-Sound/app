@@ -27,8 +27,12 @@ router.post("/signup", (req, res, next) => {
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
 
-            User.create({ username, password: hashPass })
-                .then(() => res.redirect("/"))
+            User.create({
+                username,
+                password: hashPass,
+                profileImg: "https://res.cloudinary.com/damage-sound/image/upload/v1588070683/img/Mesa_de_trabajo_2_copia_2x_qvipvp.png",
+            })
+                .then(() => {res.redirect("/")})
                 .catch(() => res.render("auth/signup", { errorMsg: "No se pudo crear el usuario" }))
         })
         .catch(error => next(error)) 

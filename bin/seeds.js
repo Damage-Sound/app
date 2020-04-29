@@ -16,7 +16,7 @@ const salt = bcrypt.genSaltSync(bcryptSalt)
 
 const users = []
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 20; i++) {
 
     users.push({
 
@@ -33,6 +33,41 @@ for (let i = 1; i <= 5; i++) {
 
 }
 
+const followers = []
+const following = []
+
+const createFollows = () => {
+    for (let i = 1; i <= 5; i++) {
+
+        followers.push({
+
+            username: faker.internet.userName(),
+            likes: faker.random.number(),
+            location: faker.address.country(),
+            password: bcrypt.hashSync('lala', salt),
+            followers: [],
+            following: [],
+            email: faker.internet.email(),
+            profileImg: faker.internet.avatar()
+
+        })
+
+        following.push({
+
+            username: faker.internet.userName(),
+            likes: faker.random.number(),
+            location: faker.address.country(),
+            password: bcrypt.hashSync('lala', salt),
+            followers: [],
+            following: [],
+            email: faker.internet.email(),
+            profileImg: faker.internet.avatar()
+
+        })
+
+    }
+}
+
 const songs = []
 
 const createSong = (authorID) => {
@@ -40,8 +75,9 @@ const createSong = (authorID) => {
     songs.push({
 
         name: faker.random.word(),
-        genre: 'pop',
+        genre: 'bachata',
         likes: faker.random.number(),
+        url: "https://res.cloudinary.com/damage-sound/video/upload/v1588010871/songs/gwdmguxrwbilyhzgknji.mp3",
         plays: {
             total: faker.random.number(),
             locations: [{
@@ -87,8 +123,6 @@ const createPlaylist = (songId, authorId) => {
 
 }
 
-
-
 User.create(users)
     .then(allUsers => {
         allUsers.forEach(user => {
@@ -105,5 +139,5 @@ User.create(users)
     .then(response => {
         console.log('Ya se ha creado')
         mongoose.connection.close()
-        })
+    })
     .catch(error => console.log(error))
