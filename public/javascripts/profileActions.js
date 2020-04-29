@@ -13,11 +13,6 @@ const navAction = (event) => {
         method: 'get',
         url: `http://damage-sound.herokuapp.com/profile/${apiMethod}`
     })
-        .then(response => {
-            console.log('de profileActions a profileView')
-            console.log('method: ', apiMethod)
-            console.log('data: ', response.data.foundPlaylists)
-            profileView(apiMethod, response.data)
-        })
+        .then(response => profileView(apiMethod, response.data.foundPlaylists))
         .catch(error => profileView('error'))
 }
