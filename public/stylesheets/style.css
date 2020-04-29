@@ -41,6 +41,9 @@ a:hover {
   background-color: #f2f2f2;
   border: none; }
 
+.play-button-song {
+  background-color: none; }
+
 .list-button {
   display: block;
   width: 100%; }

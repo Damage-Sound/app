@@ -14,7 +14,7 @@
                 <div class="col-md-8">
 
                     <h3>{{name}}</h3>
-                    <button type="submit" class="play-button" media="{{url}}"><img class="playImg" src="/images/play.svg" alt="play"></button>            
+                    <button type="submit" class="play-button-song playButton" media="{{url}}">Play</button>            
                     <small>{{genre}}</small>
                     <a href="/profile/:id">{{author.username}}</a>
                     
@@ -28,4 +28,3 @@
         </div>
 
 {{/each}}
-<script src="/javascripts/webplayer.js"></script>
