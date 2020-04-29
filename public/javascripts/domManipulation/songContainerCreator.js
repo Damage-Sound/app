@@ -12,21 +12,22 @@ const songContainerCreator = (song) => {
     console.log('TITLE CREATED')
     console.log(songTitle)
 
-    const songAuthor = document.createElement('h4')
-    songAuthor.classList += 'song-author'
-    songAuthor.innerHTML = song.author
-    console.log('Author CREATED')
-    console.log(songAuthor)
+    // const songAuthor = document.createElement('h4')
+    // songAuthor.classList += 'song-author'
+    // songAuthor.innerHTML = song.author
+    // console.log('Author CREATED')
+    // console.log(songAuthor)
 
-    const songAlbum = document.createElement('h4')
-    songAlbum.classList += 'song-album'
-    songAlbum.innerHTML = song.album
-    console.log('Album CREATED')
-    console.log(songAlbum)
+    // const songAlbum = document.createElement('h4')
+    // songAlbum.classList += 'song-album'
+    // songAlbum.innerHTML = song.album
+    // console.log('Album CREATED')
+    // console.log(songAlbum)
 
+    console.log('This executes')
     const playButton = document.createElement('button')
     playButton.setAttribute('type', 'submit')
-    playButton.classList.add('btn btn-dark btn-block btn-lg playButton')
+    playButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'playButton')
     playButton.setAttribute('media', song.url)
     playButton.innerHTML = 'Play'
     console.log('Button CREATED')
