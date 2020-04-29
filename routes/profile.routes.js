@@ -38,7 +38,7 @@ router.get('/playlists', checkLoggedIn, (req, res, next) => {
 
     Playlist.find({ author: req.user.id })
         .populate('songs')
-        .then(foundPlaylists => res.json({ foundPlaylists }))
+        .then(foundPlaylists => res.json(foundPlaylists))
         .catch(error => next(error))
 })
 
