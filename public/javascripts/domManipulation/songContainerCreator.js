@@ -26,5 +26,7 @@ const songContainerCreator = (song) => {
     songContainer.appendChild(songAuthor)
     songContainer.appendChild(songAlbum)
 
+    console.log('before returning')
+    console.log(songContainer)
     return songContainer
 }

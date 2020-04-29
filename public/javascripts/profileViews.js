@@ -9,7 +9,7 @@ const profileView = (view, data) => {
             data.forEach(song => {
                 const container = document.querySelector('.profile-actions')
                 console.log(container)
-                container.appendChild(songContainerCreator(song))
+                console.log('after returning', songContainerCreator(song))
             });
             break
         
