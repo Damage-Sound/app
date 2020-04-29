@@ -4,6 +4,7 @@ const profileAlbums = (data) => {
 
     data.forEach(album => {
 
+        console.log('1')
         const albumContainer = document.createElement('div')
         albumContainer.classList += 'album-container'
 
@@ -12,6 +13,8 @@ const profileAlbums = (data) => {
 
         const albumInfoContainer = document.createElement('div')
         albumInfoContainer.classList += 'album-info-container'
+
+        console.log('2')
 
         const albumCover = document.createElement('img')
         albumCover.classList += 'album-cover'
@@ -29,9 +32,13 @@ const profileAlbums = (data) => {
             albumGenreContainer.appendChild(genre)
         })
 
+        console.log('3')
+
         const albumLikes = document.createElement('p')
         albumLikes.classList += 'album-likes'
         albumLikes.innerHTML = album.likes
+
+        console.log('4')
 
         albumCoverContainer.appendChild(albumCover)
 
@@ -41,6 +48,7 @@ const profileAlbums = (data) => {
 
         albumContainer.appendChild(albumCoverContainer)
         albumContainer.appendChild(albumInfoContainer)
+        console.log('5')
 
         container.appendChild(albumContainer)
     })
