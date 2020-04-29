@@ -27,9 +27,10 @@ const profileAlbums = (data) => {
         const albumGenreContainer = document.createElement('div')
         albumGenreContainer.classList += 'album-genre-container'
         album.genre.forEach(genre => {
-            const genre = document.createElement('p')
-            genre.classList += 'album-genre'
-            albumGenreContainer.appendChild(genre)
+            const genreTopic = document.createElement('p')
+            genreTopic.classList += 'album-genre'
+            genreTopic.innerHTML = genre
+            albumGenreContainer.appendChild(genreTopic)
         })
 
         console.log('3')
