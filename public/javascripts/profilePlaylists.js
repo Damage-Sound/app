@@ -24,14 +24,13 @@ const profilePlaylists = (data) => {
 
 
         playlistContainer.appendChild(playlistTitle)
-
         playlistContainer.appendChild(playlistLikes)
 
 
 
         console.log('se va a meter esto:')
-        console.log(playListContainer)
-        console.log('en esto esto:')
+        console.log(playlistContainer)
+        console.log('en esto:')
         console.log(container)
 
         container.appendChild(playListContainer)
