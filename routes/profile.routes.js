@@ -34,15 +34,11 @@ router.get('/', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-
-
 router.post('/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
 router.post('/img', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
-
-
 
 module.exports = router
