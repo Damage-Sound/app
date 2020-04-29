@@ -36,6 +36,8 @@ const songContainerCreator = (song) => {
 
     songContainer.appendChild(playButton)
     songContainer.appendChild(songTitle)
+    songContainer.appendChild(songPlays)
+    songContainer.appendChild(songLikes)
 
     //songContainer.appendChild(songAlbum)
 
