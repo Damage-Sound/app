@@ -16,7 +16,7 @@ const navAction = (event) => {
         .then(response => {
             console.log('de profileActions a profileView')
             console.log('method: ', apiMethod)
-            console.log('data: ', response.data)
+            console.log('data: ', response.data.foundPlaylists)
             profileView(apiMethod, response.data)
         })
         .catch(error => profileView('error'))
