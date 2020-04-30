@@ -7,6 +7,7 @@ body {
     padding-bottom: 100px;
     background-color: #1A1A1A;
     color: $cultured;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1,
@@ -16,6 +17,21 @@ h4,
 h5 {
     font-weight: 200;
     color: $cultured;
+}
+
+.navbar {
+    background-color: $rich-black;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: $cultured;
+}
+
+.navbar-brand {
+    img {
+        width: 150px;
+        margin-left: 150px;
+    }
 }
 
 button {
@@ -31,7 +47,15 @@ a {
 
 a:hover {
     text-decoration: none;
+    color: white;
+}
+
+.a-buttons {
+    font-size: .8em;
     color: $middle-red;
+    border: 2px solid $middle-red;
+    border-radius: 3px;
+    padding: 2px 5px;
 }
 
 .music-player {
@@ -73,6 +97,9 @@ a:hover {
     border: 2px solid $middle-red;
     border-radius: 4px;
     background-color: $middle-red;
+    text-align: center;
+    align-content: center;
+    margin-top: 5px;
 }
 
 .play-button-song {
@@ -115,10 +142,10 @@ audio {
 .navbar-discover {
     ul {
         a {
-            color: #424242
+            color: $cultured;
         }
         a:hover {
-            color: black;
+            color: white;
             text-decoration: none;
         }
     }

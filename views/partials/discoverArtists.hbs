@@ -1,14 +1,50 @@
+
+
 {{#each allUsers}}
+
         <div class="discover-card">
             <div class="row">
-                <a href="/colab/{{id}}">Ask for collab</a>
-                <img class= 'profileImg' src="{{profileImg}}" alt="Profile Image">
-                <a href="/artist/{{_id}}"><h3>{{username}}</h3></a>
-        
-            
+
+                <div class="col-md-4">
+
+                    <div class="row">
+                        <img class= 'profileImg' src="{{profileImg}}" alt="Profile Image">
+                    </div>
+
+                    <div class="row">
+                        <img class="flaticon-img" src="/images/heart2.svg" alt="like"> {{likes}}
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-8">
+
+                    
+                        <div class="row">
+                        <div class="col">
+                            <a href="/artist/{{_id}}"><h3>{{username}}</h3></a>
+                        </div>
+                        </div>
+
+                        <div class="row">
+                        <div class="col">
+
+                                <a class="a-buttons" href="/colab/{{id}}">Ask for collaboration</a>
+
+                        </div>
+                        </div>
+
+                    
+
+                </div>
+
+
             </div>
-            <img class="flaticon-img" src="/images/heart2.svg" alt="like"> {{likes}}
+            
 
         </div>
 
 {{/each}}
+
+
