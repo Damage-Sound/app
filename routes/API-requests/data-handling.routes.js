@@ -67,10 +67,10 @@ router.get('/play/:id', (req, res, next) => {
 
     const songID = req.params.id
 
-    axios({
-        method: 'post',
-        url: `http://www.damage-sound.herokuapp.com/locate/`
-    })
+    // axios({
+    //     method: 'post',
+    //     url: `http://www.damage-sound.herokuapp.com/locate/`
+    // })
         .then(response => console.log('everything is fine', response))
         .catch(error => console.log('error locating user', error))
 
