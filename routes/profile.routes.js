@@ -98,6 +98,13 @@ router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resourc
     console.log(req.file)
     console.log('-------')
     console.log(req.user)
+    console.log('-------')
+    console.log(req.body)
+
+    const song = {
+        url,
+
+    }
 })
 
 router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
