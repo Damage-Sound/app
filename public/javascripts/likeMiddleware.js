@@ -13,9 +13,9 @@ class APIHandler {
 }
 
 
-apiMethods.getLikes()
-    .then(response => console.log(response.data))
-    .catch(error => console.log(error))
+// apiMethods.getLikes()
+//     .then(response => console.log(response.data))
+//     .catch(error => console.log(error))
 
 
 
@@ -29,8 +29,9 @@ apiMethods.getLikes()
 // }
 
 const likeMiddleware = (song) => {
-    
+
     const apiMethods = new APIHandler(`http://www.damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`)
+    
     apiMethods.getLikes()
         .then(response => console.log(response.data))
         .catch(error => console.log(error))
