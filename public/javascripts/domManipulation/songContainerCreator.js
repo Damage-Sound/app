@@ -3,6 +3,10 @@ const songContainerCreator = (song) => {
     const songContainer = document.createElement('div')
     songContainer.classList += 'song-container'
 
+    const songCover = document.createElement('img')
+    songCover.classList += 'song-cover'
+    songCover.src = song.cover
+
     const songTitle = document.createElement('h3')
     songTitle.classList += 'song-title'
     songTitle.innerHTML = song.name
@@ -31,6 +35,7 @@ const songContainerCreator = (song) => {
     likeButton.innerHTML = 'Like'
     likeButton.addEventListener('click', event => like(event))
 
+    songContainer.appendChild(songCover)
     songContainer.appendChild(songTitle)
     songContainer.appendChild(songPlays)
     songContainer.appendChild(songLikes)

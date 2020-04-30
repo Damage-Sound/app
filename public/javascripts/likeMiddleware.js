@@ -6,7 +6,7 @@ const likeMiddleware = (event) => {
     
     apiMethods.getInfo()
         .then(response => {
-            let likes = song.parentNode.childNodes[2]
+            let likes = song.parentNode.childNodes[3]
             likes.innerHTML = response
         })
         .catch(error => console.log(error))
