@@ -68,14 +68,13 @@ router.get('/play/:id', (req, res, next) => {
 
     const songID = req.params.id
 
-    console.log('--------------------------------------------------------')
-    console.log('ENTRA EN PLAY')
-    console.log('--------------------------------------------------------')
-
     Song.findById(songID)
         .then(foundSong => {
             const { plays } = foundSong.plays
-            plays.total++
+            console.log('-----------------------------')
+            console.log('PLAYS')
+            console.log(plays)
+            console.log('-----------------------------')
             return Song.findByIdAndUpdate(foundSong.id, { plays }, { new: true })
                 .then(response => response)
                 .catch(error => console.log('error: ', error))
