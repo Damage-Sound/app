@@ -51,16 +51,19 @@ router.get('/like/:id', (req, res, next) => {
     console.log('HOLA')
 
     const songID = req.params.id
+    let responseFromServer
 
-    return Song.findById(songID)
+    Song.findById(songID)
         .then(foundSong => {
             const likes = foundSong.likes + 1
             return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
                 .then(response => console.log(response))
                 .catch(error => console.log('error: ', error))
         })
-        .then(response => res.json(response))
+        .then(response => { responseFromServer = res.json(response) })
         .catch(error => console.log(error))
+
+    return responseFromServer
 })
 
 
