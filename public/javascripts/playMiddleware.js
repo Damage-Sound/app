@@ -4,7 +4,8 @@ const playMiddleware = (song) => {
 
     apiMethods.getInfo()
         .then(response => {
-            console.log(response)
+            let plays = song.parentNode.childNodes[1]
+            plays.innerHTML = response
         })
         .catch(error => console.log(error))
 }
