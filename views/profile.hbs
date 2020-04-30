@@ -20,7 +20,7 @@
                 <img class="profileImg" src="{{userInfo.profileImg}}" alt="Profile Logo">
             </figure>
 
-            <form method="POST" action="/profile/upload-picture/{{userInfo.id}}" enctype="multipart/form-data">
+            <form method="POST" action="/upload/profile-picture/{{userInfo.id}}" enctype="multipart/form-data">
                 <label for="profileImg">Upload Picture</label>
                 <input type="file" class="form-control-file" id="profileImg" name="profileImg">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -43,7 +43,7 @@
 
 <div class="profile-actions">
     {{#if approvedMsg}}
-        <h3 class="approvedMsg">{{approvedMsg}}</h3>
+    <h3 class="approvedMsg">{{approvedMsg}}</h3>
     {{/if}}
 </div>
 
