@@ -28,4 +28,5 @@ app.use('/api', require('./routes/API-requests/data-handling.routes'))
 app.use('/album', require('./routes/album-detail'))
 app.use('/playlist', require('./routes/playlist-detail'))
 app.use('/discover', require('./routes/discover.routes'))
+app.use('/colab', require('./routes/colab.routes'))
 module.exports = app
