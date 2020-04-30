@@ -9,7 +9,6 @@ class APIHandler {
             .then(result => result.data)
             .catch(error => console.log(error))
     }
-
 }
 
 const likeMiddleware = (event) => {

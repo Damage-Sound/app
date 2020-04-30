@@ -48,7 +48,7 @@ router.get('/', (req, res, next) => {
 
 // Likes counter updater
 router.get('/like/:id', (req, res, next) => {
-    
+
     const songID = req.params.id
 
     Song.findById(songID)
@@ -67,6 +67,17 @@ router.get('/like/:id', (req, res, next) => {
 router.get('/play/:id', (req, res, next) => {
 
     const songID = req.params.id
+
+    Song.findById(songID)
+        .then(foundSong => {
+            const { plays } = foundSong.plays
+            plays.total++
+            return Song.findByIdAndUpdate(foundSong.id, { plays }, { new: true })
+                .then(response => response)
+                .catch(error => console.log('error: ', error))
+        })
+        .then(response => res.json(response.likes))
+        .catch(error => next(error))
 
     //     axios({
     //         method: 'post',
