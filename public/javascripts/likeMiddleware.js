@@ -5,11 +5,7 @@ const likeMiddleware = (event) => {
     const apiMethods = new APIHandler(`http://damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`)
 
     apiMethods.getInfo()
-        .then(response => {
-            // let likes = song.parentNode.childNodes[3]
-            // likes.innerHTML = response
-            Array.from(song.parentNode.childNodes).filter(node => node.nodeType !== Node.TEXT_NODE)[3].innerHTML = response
-        })
+        .then(response => Array.from(song.parentNode.childNodes).filter(node => node.className === 'song-likes')[0].innerHTML = response)
         .catch(error => console.log(error))
 }
 

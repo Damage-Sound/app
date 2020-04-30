@@ -67,8 +67,6 @@ const loadSongView = (event) => {
     songGenreSelect.setAttribute('id', 'songGenre')
     songGenreSelect.setAttribute('name', 'songGenre')
 
-    // const songGenresOptions = []
-
     genres.forEach(genre => {
 
         const genreOption = document.createElement('option')
@@ -76,8 +74,6 @@ const loadSongView = (event) => {
         genreOption.innerHTML = genre
         songGenreSelect.appendChild(genreOption)
     })
-
-    // songGenresOptions.forEach(option => songGenreSelect.appendChild(option))
 
     const songFileButton = document.createElement('button')
     songFileButton.classList += 'btn btn-primary'
