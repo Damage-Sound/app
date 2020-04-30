@@ -1,4 +1,33 @@
 {{#each allSongs}}
+{{!-- <div class="discover-card">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <img class= 'coverImg' src="{{cover}}" alt="Cover">
+                    <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{likes}}</p>
+
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <h3>{{name}}</h3>
+                    <button type="submit" class="play-button-song playButton" media="{{url}}">Play</button>            
+                    <small>{{genre}}</small>
+                    <a href="/profile/:id">{{author.username}}</a>
+                    
+                    
+                    
+                </div>
+                
+            
+            </div>
+
+        </div> --}}
+
+
 <div class="song-container">
     <img src="{{cover}}" alt="song cover" class="song-cover">
     <h3 class="song-title">{{name}}</h3>
@@ -7,4 +36,13 @@
     <button class="btn btn-dark btn-block btn-lg playButton" media={{url}} songID={{id}}>Play</button>
     <button class="btn btn-dark btn-block btn-lg likeButton" media={{url}} songID={{id}}>Like</button>
 </div>
+
 {{/each}}
+
+
+<script src="/javascripts/userActions.js"></script>
+<script src="/javascripts/apiHandler.js"></script>
+<script src="/javascripts/likeMiddleware.js"></script>
+<script src="/javascripts/playMiddleware.js"></script>
+<script src="/javascripts/webplayer.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
