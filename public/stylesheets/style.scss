@@ -4,23 +4,42 @@ $rich-black: #000000;
 $cultured: #F1F3F4;
 body {
     font-weight: 200;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
+    background-color: #1A1A1A;
+    color: $cultured;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
     font-weight: 200;
+    color: $cultured;
+}
+
+button {
+    text-align: center;
+    background-color: #1A1A1A;
+    border: none;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: $cultured;
 }
 
 a:hover {
     text-decoration: none;
-    color: grey;
+    color: $middle-red;
+}
+
+.music-player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: $cultured;
 }
 
 .navbar {
@@ -49,10 +68,11 @@ a:hover {
     margin-right: 10px;
 }
 
-.play-button {
-    padding: 0;
-    background-color: #f2f2f2;
-    border: none;
+.play-button-like {
+    padding: 2px 10px;
+    border: 2px solid $middle-red;
+    border-radius: 4px;
+    background-color: $middle-red;
 }
 
 .play-button-song {
@@ -77,11 +97,7 @@ a:hover {
     margin-right: 5px;
     background-size: cover;
     transition: all .4s;
-}
-
-.flaticon-img:hover,
-.flaticon-img:focus {
-    background-image: url('/images/heart2.svg');
+    filter: invert(97%) sepia(1%) saturate(0%) hue-rotate(154deg) brightness(250%) contrast(94%);
 }
 
 audio {
@@ -90,6 +106,10 @@ audio {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.play-img {
+    filter: invert(97%) sepia(8%) saturate(39%) hue-rotate(154deg) brightness(100%) contrast(94%);
 }
 
 .navbar-discover {
@@ -102,13 +122,6 @@ audio {
             text-decoration: none;
         }
     }
-}
-
-button {
-    padding: 0;
-    margin: 0;
-    background-color: none;
-    border: none;
 }
 
 .discover-container {
@@ -130,4 +143,8 @@ button {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+}
+
+.albums-artist-row {
+    margin: 30px 0 60px 0;
 }
