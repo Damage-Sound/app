@@ -51,6 +51,9 @@ router.get('/like/:id', (req, res, next) => {
 
     const songID = req.params.id
 
+    console.log('-------------------------------------------------------------------------')
+    console.log('ENTRA EN RUTA')
+
     Song.findById(songID)
         .then(foundSong => {
             const likes = foundSong.likes + 1
