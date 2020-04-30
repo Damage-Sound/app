@@ -1,0 +1,68 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-5">
+
+            <div class="row">
+                <img src="{{cover}}" alt="cover">
+            </div>
+
+            <div class="row">
+                <small><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button>{{likes}}</small>
+            </div>
+
+        </div>
+
+        <div class="col-md-7">
+
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6">
+                    <img src="{{author.profileImg}}" alt="img">
+                    <a href="#"></a><small>{{author.username}}</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>{{name}}</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <ul>
+                {{#each songs}}
+                    <img class="coverImg" src="{{cover}}" alt="cover">
+                    <li><button type="submit" class="play-button list-button playButton" media="{{url}}">Play {{name}}</button></li>
+                    <small>{{plays.total}} plays</small><small></small>
+                    <small><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button>{{likes}}</small>
+                    <hr>
+                {{/each}}
+        </ul>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+            
+            
+           
+        
+       
+             
+       
