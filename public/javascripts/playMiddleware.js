@@ -14,8 +14,6 @@ class APIHandler {
 
 
 const playMiddleware = (song) => {
-    
-    const song = event.target
 
     const apiMethods = new APIHandler(`http://damage-sound.herokuapp.com/api/play/${song.getAttribute('songID')}`)
 
