@@ -59,7 +59,7 @@ router.get('/like/:id', (req, res, next) => {
         .then(foundSong => {
             const likes = foundSong.likes + 1
             return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
-                .then(response => console.log('---------------------------------- LIKES AFTER UPDATE -------------', response))
+                .then(response => response)
                 .catch(error => console.log('error: ', error))
         })
         .then(response => res.json(response.likes))
