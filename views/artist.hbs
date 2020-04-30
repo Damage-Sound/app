@@ -1,4 +1,4 @@
-<div class="discover-card">
+<div class="container">
 
     <div class="row">
 
@@ -6,12 +6,18 @@
         <h3>{{user.username}}</h3>
 
     </div>
-    <p></p>
-    <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{user.likes}}</p>
-    <section class="albums-section">
-        <p>Albums</p>
-        <div class="row">
-            {{#each albums}}
+    <div class="row">
+
+        <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{user.likes}}</p>
+
+    </div>
+
+
+    <div class="row">
+
+            <h4>Albums</h4>
+        {{#each albums}}
+        <div class="col-md-3">
             <a href="http://damage-sound.herokuapp.com/album/{{this.id}}">
                 <article class="album-container">
                     <figure class="album-cover-container"><img src="{{this.cover}}" alt="album cover"
@@ -19,7 +25,29 @@
                     <h3 class="album-title">{{this.name}}</h3>
                 </article>
             </a>
-            {{/each}}
+        </div>
+        {{/each}}
+
+
+    </div>
+
+
+</div>
+
+
+
+<div class="discover-card">
+
+    <div class="row">
+
+
+
+    </div>
+    
+    <section class="albums-section">
+        
+        <div class="row">
+
         </div>
     </section>
 
