@@ -45,10 +45,9 @@ router.get('/', (req, res, next) => {
 
 })
 
+
 // Likes counter updater
 router.get('/like/:id', (req, res, next) => {
-
-    console.log('HOLA')
 
     const songID = req.params.id
 
@@ -56,11 +55,11 @@ router.get('/like/:id', (req, res, next) => {
         .then(foundSong => {
             const likes = foundSong.likes + 1
             return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
-                .then(response => res.json(response))
+                .then(response => response)
                 .catch(error => console.log('error: ', error))
         })
-        .then(response => console.log('updated', response))
-        .catch(error => console.log(error))
+        .then(response => res.json(response.likes))
+        .catch(error => next(error))
 })
 
 
@@ -69,22 +68,16 @@ router.get('/play/:id', (req, res, next) => {
 
     const songID = req.params.id
 
-    // axios({
-    //     method: 'post',
-    //     url: `http://www.damage-sound.herokuapp.com/locate/`
-    // })
-        .then(response => console.log('everything is fine', response))
-        .catch(error => console.log('error locating user', error))
-
-    // Song.findById(songID)
-    //     .then(foundSong => {
-    //         const plays = foundSong.plays.total + 1
-    //         return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
-    //             .then(response => res.json(response))
-    //             .catch(error => console.log('error: ', error))
-    //     })
-    //     .then(response => console.log('updated', response))
-    //     .catch(error => console.log(error))
+    Song.findById(songID)
+        .then(foundSong => {
+            const plays = foundSong.plays
+            plays.total++
+            return Song.findByIdAndUpdate(foundSong.id, {plays}, { new: true })
+                .then(response => response)
+                .catch(error => console.log('error: ', error))
+        })
+        .then(response => res.json(response.plays.total))
+        .catch(error => next(error))
 })
 
 
