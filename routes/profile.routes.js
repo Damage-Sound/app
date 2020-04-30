@@ -131,7 +131,7 @@ router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resourc
 
 router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
 
-    const profileImg  = req.file.profileImg
+    const profileImg = req.file.url
 
     console.log('---------------------------------')
     console.log(profileImg)
@@ -149,7 +149,7 @@ router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile
             ]
             return Promise.all(promises)
         })
-        .then((responses) => res.render('profile', { userInfo, songs: responses[0], playlists: responses[1], albums: responses[2] }))
+        .then((responses) => res.redirect('/profile'))
         .catch(error => next(error))
 })
 
