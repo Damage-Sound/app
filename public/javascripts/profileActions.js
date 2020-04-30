@@ -51,6 +51,16 @@ const loadSongView = (event) => {
     songFileLabel.innerHTML = 'Choose Your Song File'
     songFileLabel.setAttribute('for', 'songFile')
 
+    const songNameLabel = document.createElement('label')
+    songNameLabel.innerHTML = 'Write Your Song Name'
+    songNameLabel.setAttribute('for', 'songName')
+
+    const songNameInput = document.createElement('input')
+    songNameInput.classList += 'form-control-file'
+    songNameInput.setAttribute('type', 'text')
+    songNameInput.setAttribute('id', 'songName')
+    songNameInput.setAttribute('name', 'songName')
+
     const songCoverLabel = document.createElement('label')
     songCoverLabel.innerHTML = 'Choose Your Song Cover'
     songCoverLabel.setAttribute('for', 'songCover')
@@ -63,7 +73,7 @@ const loadSongView = (event) => {
     songFileInput.classList += 'form-control-file'
     songFileInput.setAttribute('type', 'file')
     songFileInput.setAttribute('id', 'songGenre')
-    songFileInput.setAttribute('name', 'songFile')
+    songFileInput.setAttribute('name', 'songGenre')
 
     const songGenreSelect = document.createElement('select')
     songGenreSelect.classList += 'form-control'
@@ -94,6 +104,7 @@ const loadSongView = (event) => {
     formFieldsContainer.appendChild(songFileInput)
     // formFieldsContainer.appendChild(songCoverLabel)
     // formFieldsContainer.appendChild(songFileCover)
+
     formFieldsContainer.appendChild(songGenreLabel)
     formFieldsContainer.appendChild(songGenreSelect)
 
