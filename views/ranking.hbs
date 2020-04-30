@@ -4,13 +4,13 @@
     <p>Best tracks on Damage Sound</p>
 
     <form action="/rank/likes" method="POST">
-        <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by likes</button>            
+        <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by likes</button>
     </form>
     <form action="/rank/plays" method="POST">
         <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by plays</button>
     </form>
     <section class="rank-content">
-        
+
         {{#each theData}}
 
         <div class="song-container">
@@ -24,9 +24,10 @@
 
         {{/each}}
     </section>
-    
-</div>  
 
+</div>
+
+<script src="/javascripts/userActions.js"></script>
 <script src="/javascripts/apiHandler.js"></script>
 <script src="/javascripts/likeMiddleware.js"></script>
 <script src="/javascripts/playMiddleware.js"></script>
