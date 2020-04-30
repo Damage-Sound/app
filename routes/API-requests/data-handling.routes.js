@@ -70,10 +70,10 @@ router.get('/play/:id', (req, res, next) => {
 
     Song.findById(songID)
         .then(foundSong => {
-            const { plays } = foundSong.plays
+            const plays  = foundSong.plays
             console.log('-----------------------------')
             console.log('PLAYS')
-            console.log(plays)
+            console.log(foundSong)
             console.log('-----------------------------')
             return Song.findByIdAndUpdate(foundSong.id, { plays }, { new: true })
                 .then(response => response)
