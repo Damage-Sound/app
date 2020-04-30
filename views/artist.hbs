@@ -1,0 +1,56 @@
+<div class="discover-card">
+
+    <div class="row">
+
+        <img class='profileImg' src="{{user.profileImg}}" alt="Profile Image">
+        <h3>{{user.username}}</h3>
+
+    </div>
+    <p></p>
+    <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{user.likes}}</p>
+    <section class="albums-section">
+        <p>Albums</p>
+        <div class="row">
+            {{#each albums}}
+            <a href="http://damage-sound.herokuapp.com/album/{{this.id}}">
+                <article class="album-container">
+                    <figure class="album-cover-container"><img src="{{this.cover}}" alt="album cover"
+                            class="album-cover-img"></figure>
+                    <h3 class="album-title">{{this.name}}</h3>
+                </article>
+            </a>
+            {{/each}}
+        </div>
+    </section>
+
+    <section class="playlists-section">
+        <p>Playlists</p>
+        <div class="row">
+            {{#each playlists}}
+            <a href="http://damage-sound.herokuapp.com/playlist/{{this.id}}">
+                <article class="playlist-container">
+                    <h3 class="playlist-title">{{this.name}}</h3>
+                </article>
+            </a>
+            {{/each}}
+        </div>
+    </section>
+
+
+    <section class="songs-section">
+        <p>Songs</p>
+        <div class="row">
+            {{#each songs}}
+            <div class="song-container">
+                <h3 class="song-title">{{this.name}}</h3>
+                <p class="song-plays">{{this.plays.total}}</p>
+                <p class="song-likes">{{this.likes}}</p>
+                <button class="btn btn-dark btn-block btn-lg playButton"
+                    media="https://res.cloudinary.com/damage-sound/video/upload/v1588010871/songs/gwdmguxrwbilyhzgknji.mp3"
+                    songid="{{this.id}}">Play</button>
+                <button class="btn btn-dark btn-block btn-lg likeButton" songid="{{this.id}}">Like</button>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</div>

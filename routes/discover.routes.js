@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require('../models/user.model')
 const Playlist = require('../models/playlist.model')
 const Album = require('../models/album.model')
-const Song = require('../models/song.model')
+const Song = require('../models/song.model') 
 
 
 

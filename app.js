@@ -25,6 +25,8 @@ app.use('/rank', require('./routes/ranking.routes'))
 app.use('/profile', require('./routes/profile.routes'))
 app.use('/profile/api-request', require('./routes/API-requests/user-data-handling.routes'))
 app.use('/api', require('./routes/API-requests/data-handling.routes'))
-app.use('/playlist-detail', require('./routes/playlist-detail'))
+app.use('/playlist', require('./routes/playlist-detail'))
 app.use('/discover', require('./routes/discover.routes'))
+app.use('/artist', require('./routes/artist.routes'))
+
 module.exports = app

@@ -1,20 +1,15 @@
 {{#each allAlbums}}
         <div class="discover-card">
-
             <div class="row">
-
                 <div class="col-md-4">
 
                     <img class= 'coverImg' src="{{cover}}" alt="Cover">
                     <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{likes}}</p>
 
-
                 </div>
 
                 <div class="col-md-8">
-
                     <h3>{{name}}</h3>
-
                     <p>{{author.username}}</p>
 
                     <ul>
@@ -23,13 +18,8 @@
                         {{/each}}
                     </ul>
                     
-                    
-                    
                 </div>
-                
-            
             </div>
-
         </div>
 
 {{/each}}
