@@ -10,7 +10,7 @@
                     {{!-- <li user="{{userInfo.id}}" api="comments" id="nav-comments">Comments</li>
                     <li user="{{userInfo.id}}" api="followers" id="nav-followers">Followers</li>
                     <li user="{{userInfo.id}}" api="following" id="nav-following">Following</li> --}}
-                    <li user="{{userInfo.id}}" api="statistics" id="nav-statistics">Statistics</li>
+                    {{!-- <li user="{{userInfo.id}}" api="statistics" id="nav-statistics">Statistics</li> --}}
                 </ul>
             </nav>
         </div>
@@ -19,6 +19,13 @@
             <figure class="profileImg-container">
                 <img class="profileImg" src="{{userInfo.profileImg}}" alt="Profile Logo">
             </figure>
+
+            <form method="POST" action="/profile/upload/picture/{{userInfo.id}}" enctype="multipart/form-data">
+                <label for="profilePicture">Upload Picture</label>
+                <input type="file" class="form-control-file" id="profilePicture" name="profilePicture">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
             <article class="profileInfo-container">
                 <p class="name">{{userInfo.username}}</p>
                 <p class="name">{{userInfo.likes}}</p>

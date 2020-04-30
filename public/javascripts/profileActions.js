@@ -5,6 +5,9 @@ window.onload = () => {
     navActions.forEach(element => {
         element.addEventListener('click', event => navAction(event))
     })
+
+    const uploadSong = document.querySelector('#upload-song-button')
+    uploadSong.addEventListener('click', event => loadSongView(event))
 }
 
 const navAction = (event) => {
@@ -18,4 +21,81 @@ const navAction = (event) => {
             profileView(apiMethod, response.data)
         })
         .catch(error => profileView('error'))
+}
+
+
+
+const loadSongView = (event) => {
+
+    const genres = ['bachata', 'alternative rock', 'hard rock', 'bossa nova', 'punk', 'blues', 'classical', 'country', 'dance', 'deep house', 'dubstep', 'techno', 'house', 'trance', 'electronic', 'hip-hop', 'rap', 'indie', 'jazz', 'flamenco', 'reggaeton', 'salsa', 'meditation', 'pop', 'progressive', 'r&b', 'soul', 'reggae', 'rock', 'metal']
+
+
+    const container = document.querySelector('.profile-actions')
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+
+    const formContainer = document.createElement('div')
+    formContainer.classList += 'form-container'
+
+    const uploadSongForm = document.createElement('form')
+    uploadSongForm.classList += 'upload-song-form'
+    uploadSongForm.setAttribute('method', 'POST')
+    uploadSongForm.setAttribute('action', 'profile/upload/song')
+    uploadSongForm.setAttribute('enctype', 'multipart/form-data')
+
+    const formFieldsContainer = document.createElement('div')
+    formFieldsContainer.classList += 'form-group'
+
+    const songFileLabel = document.createElement('label')
+    songFileLabel.innerHTML = 'Upload a File'
+    songFileLabel.setAttribute('for', 'songFile')
+
+    const songFileInput = document.createElement('input')
+    songFileInput.classList += 'form-control-file'
+    songFileInput.setAttribute('type', 'file')
+    songFileInput.setAttribute('id', 'songGenre')
+    songFileInput.setAttribute('name', 'songFile')
+
+    const songGenreSelect = document.createElement('select')
+    songGenreSelect.classList += 'form-control'
+    songGenreSelect.setAttribute('type', 'select')
+    songGenreSelect.setAttribute('id', 'songGenre')
+    songGenreSelect.setAttribute('name', 'songGenre')
+
+    const songGenresOptions = genres.forEach(genre => {
+        
+        const songGenreOption = document.createElement('option')
+        songGenreOption.setAttribute('value', genre)
+        songGenreOption.innerHTML = genre
+
+        return songGenresOptions
+    })
+
+    songGenresOptions.forEach(option => songGenreSelect.appendChild(option))
+
+
+    const songFileButton = document.createElement('button')
+    songFileButton.classList += 'btn btn-primary'
+    songFileButton.innerHTML = 'Submit'
+    songFileButton.setAttribute('type', 'submit')
+
+    const songFileCover = document.createElement('input')
+    songFileCover.classList += 'form-control-file'
+    songFileCover.setAttribute('type', 'file')
+    songFileCover.setAttribute('id', 'songCover')
+    songFileCover.setAttribute('name', 'songCover')
+
+
+    formFieldsContainer.appendChild(songFileLabel)
+    formFieldsContainer.appendChild(songFileInput)
+    formFieldsContainer.appendChild(songGenresOptions)
+    formFieldsContainer.appendChild(songFileCover)
+
+    formContainer.appendChild(formFieldsContainer)
+    formContainer.appendChild(songFileButton)
+
+
+    container.appendChild(formContainer)
+  
 }
