@@ -51,7 +51,6 @@ router.get('/like/:id', (req, res, next) => {
     console.log('HOLA')
 
     const songID = req.params.id
-    let responseFromServer
 
     Song.findById(songID)
         .then(foundSong => {
@@ -60,10 +59,8 @@ router.get('/like/:id', (req, res, next) => {
                 .then(response => console.log(response))
                 .catch(error => console.log('error: ', error))
         })
-        .then(response => { responseFromServer = res.json(response) })
+        .then(response => { console.log(response) })
         .catch(error => console.log(error))
-
-    return responseFromServer
 })
 
 
@@ -72,17 +69,17 @@ router.get('/play/:id', (req, res, next) => {
 
     const songID = req.params.id
 
-        // axios({
-        //     method: 'post',
-        //     url: `http://www.damage-sound.herokuapp.com/locate/`
-        // })
-        .then(response => console.log('everything is fine', response))
-        .catch(error => console.log('error locating user', error))
+    //     axios({
+    //         method: 'post',
+    //         url: `http://www.damage-sound.herokuapp.com/locate/`
+    //     })
+    //     .then(response => console.log('everything is fine', response))
+    //     .catch(error => console.log('error locating user', error))
 
     // Song.findById(songID)
     //     .then(foundSong => {
     //         const plays = foundSong.plays.total + 1
-    //         return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
+    //         return Song.findByIdAndUpdate(foundSong.id, { plays }, { new: true })
     //             .then(response => res.json(response))
     //             .catch(error => console.log('error: ', error))
     //     })
