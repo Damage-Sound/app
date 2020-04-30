@@ -15,3 +15,6 @@ const play = (event) => {
     playMiddleware(event.target)
     player.play()
 }
+
+const like = (event) => likeMiddleware(event.target)
+
