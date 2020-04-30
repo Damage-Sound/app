@@ -74,7 +74,11 @@ const loadSongView = (event) => {
         songGenresOptions.push(genreOption)
     })
 
-    songGenresOptions.forEach(option => songGenreSelect.appendChild(option))
+    songGenresOptions.forEach(option => {
+        console.log(option)
+        console.log(typeof option)
+        songGenreSelect.appendChild(option)
+    })
 
     console.log(songGenresOptions)
     console.log(typeof songGenresOptions)
