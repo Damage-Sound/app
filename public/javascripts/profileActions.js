@@ -48,8 +48,12 @@ const loadSongView = (event) => {
     formFieldsContainer.classList += 'form-group'
 
     const songFileLabel = document.createElement('label')
-    songFileLabel.innerHTML = 'Upload a File'
+    songFileLabel.innerHTML = 'Choose Your Song File'
     songFileLabel.setAttribute('for', 'songFile')
+
+    const songCoverLabel = document.createElement('label')
+    songCoverLabel.innerHTML = 'Choose Your Song Cover'
+    songCoverLabel.setAttribute('for', 'songCover')
 
     const songFileInput = document.createElement('input')
     songFileInput.classList += 'form-control-file'
@@ -63,25 +67,17 @@ const loadSongView = (event) => {
     songGenreSelect.setAttribute('id', 'songGenre')
     songGenreSelect.setAttribute('name', 'songGenre')
 
-    const songGenresOptions = []
+    // const songGenresOptions = []
 
     genres.forEach(genre => {
 
         const genreOption = document.createElement('option')
         genreOption.setAttribute('value', genre)
         genreOption.innerHTML = genre
-
-        songGenresOptions.push(genreOption)
+        songGenreSelect.appendChild(genreOption)
     })
 
-    songGenresOptions.forEach(option => {
-        console.log(option)
-        console.log(typeof option)
-        songGenreSelect.appendChild(option)
-    })
-
-    console.log(songGenresOptions)
-    console.log(typeof songGenresOptions)
+    // songGenresOptions.forEach(option => songGenreSelect.appendChild(option))
 
     const songFileButton = document.createElement('button')
     songFileButton.classList += 'btn btn-primary'
@@ -97,7 +93,7 @@ const loadSongView = (event) => {
 
     formFieldsContainer.appendChild(songFileLabel)
     formFieldsContainer.appendChild(songFileInput)
-    // formFieldsContainer.appendChild(songGenresOptions)
+    formFieldsContainer.appendChild(songGenresOptions)
     formFieldsContainer.appendChild(songFileCover)
 
     formContainer.appendChild(formFieldsContainer)
