@@ -58,7 +58,7 @@ router.get('/like/:id', (req, res, next) => {
                 .then(response => response)
                 .catch(error => console.log('error: ', error))
         })
-        .then(response => res.json(response))
+        .then(response => res.json(response.plays.total))
         .catch(error => next(error))
 })
 
