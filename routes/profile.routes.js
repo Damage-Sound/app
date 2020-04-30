@@ -97,6 +97,9 @@ router.get('/upload', (req, res, next) => {
 router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
+router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
+    console.log(req.file)
+})
 router.post('/img', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
