@@ -13,14 +13,15 @@
     </div>
 
 
-            <h3>Albums</h3>
+    <h3>Albums</h3>
     <div class="row albums-artist-row">
 
         {{#each albums}}
         <div class="col-md-3">
             <a href="http://damage-sound.herokuapp.com/album/{{this.id}}">
                 <article class="album-container">
-                    <figure class="album-cover-container"><img src="{{this.cover}}" alt="album cover" class="album-cover-img coverImg"></figure>
+                    <figure class="album-cover-container"><img src="{{this.cover}}" alt="album cover"
+                            class="album-cover-img coverImg"></figure>
                     <h4 class="album-title">{{this.name}}</h4>
                 </article>
             </a>
@@ -29,43 +30,44 @@
 
     </div>
 
-            <h3>Playlists</h3>
+    <h3>Playlists</h3>
     <div class="row albums-artist-row">
 
         {{#each playlists}}
-            <div class="col-md-3">
-                <a href="http://damage-sound.herokuapp.com/playlist/{{this.id}}">
-                    <article class="playlist-container">
-                        <h4 class="playlist-title">{{this.name}}</h4>
-                    </article>
-                </a>
-            </div>
+        <div class="col-md-3">
+            <a href="http://damage-sound.herokuapp.com/playlist/{{this.id}}">
+                <article class="playlist-container">
+                    <h4 class="playlist-title">{{this.name}}</h4>
+                </article>
+            </a>
+        </div>
         {{/each}}
 
 
     </div>
 
-    
 
-        <h3>Songs</h3>
-        <div class="row album-artist-row">
-            {{#each songs}}
-            <div class="col-md-3">
 
-                <h4 class="song-title">{{this.name}}</h4>
-                <p class="song-plays">{{this.plays.total}} <img class="flaticon-img play-img" src="/images/play.svg" alt="like"></p>
-                <p class="song-likes">{{this.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
-                <button class="play-button-like"
-                    media="https://res.cloudinary.com/damage-sound/video/upload/v1588010871/songs/gwdmguxrwbilyhzgknji.mp3"
-                    songid="{{this.id}}">Play</button>
-                <button class="play-button-like" songid="{{this.id}}">Like</button>
-            
-            </div>
-            {{/each}}
+    <h3>Songs</h3>
+    <div class="row album-artist-row">
+        {{#each songs}}
+        <div class="col-md-3">
+
+            <h4 class="song-title">{{this.name}}</h4>
+            <p class="song-plays">{{this.plays.total}} <img class="flaticon-img play-img" src="/images/play.svg"
+                    alt="like"></p>
+            <p class="song-likes">{{this.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
+            <button class="play-button-like playButton"
+                media="https://res.cloudinary.com/damage-sound/video/upload/v1588010871/songs/gwdmguxrwbilyhzgknji.mp3"
+                songid="{{this.id}}">Play</button>
+            <button class="play-button-like likeButton" songid="{{this.id}}">Like</button>
+
         </div>
+        {{/each}}
+    </div>
 
 
-   
+
 
 
 
@@ -80,15 +82,21 @@
 
 
 
-    
-        
 
 
-    <section class="playlists-section">
-
-    </section>
 
 
-  
+<section class="playlists-section">
+
+</section>
+
+
+
 </div>
 
+<script src="/javascripts/userActions.js"></script>
+<script src="/javascripts/apiHandler.js"></script>
+<script src="/javascripts/likeMiddleware.js"></script>
+<script src="/javascripts/playMiddleware.js"></script>
+<script src="/javascripts/webplayer.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
