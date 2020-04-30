@@ -25,6 +25,7 @@ const songContainerCreator = (song) => {
     playButton.setAttribute('type', 'submit')
     playButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'playButton')
     playButton.setAttribute('media', song.url)
+    playButton.setAttribute('songID', song._id)
     playButton.innerHTML = 'Play'
     playButton.addEventListener('click', event => play(event))
 
