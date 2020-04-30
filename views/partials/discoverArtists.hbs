@@ -1,10 +1,10 @@
 {{#each allUsers}}
         <div class="discover-card">
-
             <div class="row">
                 <a href="/colab/{{id}}">Ask for collab</a>
                 <img class= 'profileImg' src="{{profileImg}}" alt="Profile Image">
-                <h3>{{username}}</h3>
+                <a href="/artist/{{_id}}"><h3>{{username}}</h3></a>
+        
             
             </div>
             <p><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button> {{likes}}</p>
