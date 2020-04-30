@@ -131,7 +131,7 @@ router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resourc
 
 router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
 
-    const { profileImg } = req.file
+    const profileImg  = req.file.profileImg
 
     console.log('---------------------------------')
     console.log(profileImg)

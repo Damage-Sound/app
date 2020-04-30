@@ -20,13 +20,6 @@
                 <img class="profileImg" src="{{userInfo.profileImg}}" alt="Profile Logo">
             </figure>
 
-            {{!-- <form method="POST" action="/profile/upload/profile-picture/{{userInfo.id}}" enctype="multipart/form-data">
-                <label for="profileImg">Upload Picture</label>
-                <input type="file" class="form-control-file" id="profileImg" name="profileImg">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form> --}}
-
-
             <form method="POST" action="/profile/upload/profile-picture/{{userInfo.id}}" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="imgFile">Upload a Picture</label>
