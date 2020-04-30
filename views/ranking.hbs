@@ -1,29 +1,51 @@
 <div class="container">
 
-    <h1>Ranking</h1>
-    <p>Best tracks on Damage Sound</p>
+    <div class="title-rank">
+        <h1>Ranking</h1>
+        <p>Best tracks on Damage Sound</p>
+    </div>
 
-    <form action="/rank/likes" method="POST">
-        <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by likes</button>
-    </form>
-    <form action="/rank/plays" method="POST">
-        <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">Ranking by plays</button>
-    </form>
-    <section class="rank-content">
+    <div class="row justify-content-center align-items-center row-rank-btns">
+        <div class="col-md-3">
+        </div>
 
-        {{#each theData}}
+        <div class="col-md-3">
+            <form action="/rank/likes" method="POST">
+                <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">By likes</button>
+            </form>
+        </div>
 
-        <div class="song-container">
-            <img src="{{cover}}" alt="song cover" class="song-cover">
+        <div class="col-md-3">
+        <form action="/rank/plays" method="POST">
+            <button type="submit" class="btn btn-rank btn-dark btn-block btn-lg">By plays</button>
+        </form>
+        </div>
+
+        <div class="col-md-3">
+        </div>
+
+    </div>
+    {{#each theData}}
+    <div class="row justify-content-center align-items-center">
+
+        <div class="col-md-3 col-songs">
+            <img src="{{cover}}" alt="song cover" class="song-cover" class="img-rank">
+        </div>
+        <div class="col-md-3 col-songs">
             <h3 class="song-title">{{name}}</h3>
             <p class="song-plays">{{plays.total}}</p>
-            <p class="song-likes">{{likes}}</p>
+            <p class="song-likes">{{likes}}  <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
+           
+        </div>
+        <div class="col-md-3 col-songs">
             <button class="btn btn-dark btn-block btn-lg playButton" media="{{url}}" songID="{{id}}">Play</button>
             <button class="btn btn-dark btn-block btn-lg likeButton" media="{{url}}" songID="{{id}}">Like</button>
         </div>
 
-        {{/each}}
-    </section>
+    </div>
+
+    {{/each}}
+
 
 </div>
 
