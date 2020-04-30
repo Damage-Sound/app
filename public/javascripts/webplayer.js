@@ -7,6 +7,8 @@ window.onload = () => {
     })
 }
 
+document.querySelectorAll('form').forEach(form=>form.onsubmit = e => e.preventDefault())
+
 
 const play = (event) => { 
     const player = document.querySelector('audio')
