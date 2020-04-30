@@ -7,9 +7,9 @@
                     <li user="{{userInfo.id}}" api="playlists" id="nav-playlists">Playlists</li>
                     <li user="{{userInfo.id}}" api="albums" id="nav-albums">Albums</li>
                     <li user="{{userInfo.id}}" api="songs" id="nav-songs">Songs</li>
-                    <li user="{{userInfo.id}}" api="comments" id="nav-comments">Comments</li>
+                    {{!-- <li user="{{userInfo.id}}" api="comments" id="nav-comments">Comments</li>
                     <li user="{{userInfo.id}}" api="followers" id="nav-followers">Followers</li>
-                    <li user="{{userInfo.id}}" api="following" id="nav-following">Following</li>
+                    <li user="{{userInfo.id}}" api="following" id="nav-following">Following</li> --}}
                     <li user="{{userInfo.id}}" api="statistics" id="nav-statistics">Statistics</li>
                 </ul>
             </nav>
@@ -32,13 +32,16 @@
             </article>
         </div>
     </section>
-</div>
+</div> 
 
 <div class="profile-actions">
-
 </div>
-
-K PASO WEII {{userInfo.username}}
-
+<script src="javascripts/likeMiddleware.js"></script>
+<script src="javascripts/playMiddleware.js"></script>
+<script src="javascripts/webplayer.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="javascripts/profile.js"></script>
+<script src="javascripts/domManipulation/songContainerCreator.js"></script>
+<script src="javascripts/domManipulation/profileAlbums.js"></script>
+<script src="javascripts/domManipulation/profilePlaylists.js"></script>
+<script src="javascripts/profileViews.js"></script>
+<script src="javascripts/profileActions.js"></script>
