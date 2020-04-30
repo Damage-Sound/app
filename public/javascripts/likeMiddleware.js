@@ -27,7 +27,7 @@ const likeMiddleware = (event) => {
 
     axios({
         method: 'get',
-        url: `http://www.damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`
+        url: `http://www.damage-sound.herokuapp.com//api/like/5ea98f3ef9b7c12555c4e793`
     })
         .then(response => console.log(response))
         .catch(err => console.log(err))
