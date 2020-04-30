@@ -58,7 +58,7 @@ router.get('/like/:id', (req, res, next) => {
                 .then(response => response)
                 .catch(error => console.log('error: ', error))
         })
-        .then(response => console.log('----------------------------------------------LAST RESPONSE',response))
+        .then(response => res.json(response))
         .catch(error => next(error))
 })
 
