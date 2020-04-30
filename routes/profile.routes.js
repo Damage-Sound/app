@@ -10,7 +10,7 @@ const Playlist = require('../models/playlist.model')
 const ObjectId = require('mongoose').Types.ObjectId
 const passport = require('passport')
 const bcrypt = require('bcrypt')
-const bcryptSalt = 10 
+const bcryptSalt = 10
 
 // Login Controller
 const checkLoggedIn = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login')
@@ -96,10 +96,14 @@ router.get('/upload', (req, res, next) => {
 })
 router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
+    console.log('-------')
+    console.log(req.user)
 })
-router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
+
+router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
+
 router.post('/img', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })

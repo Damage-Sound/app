@@ -90,7 +90,6 @@ const loadSongView = (event) => {
     songFileCover.setAttribute('id', 'songCover')
     songFileCover.setAttribute('name', 'songCover')
 
-
     formFieldsContainer.appendChild(songFileLabel)
     formFieldsContainer.appendChild(songFileInput)
     // formFieldsContainer.appendChild(songCoverLabel)
