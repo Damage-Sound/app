@@ -1,23 +1,8 @@
-class APIHandler {
-    constructor(baseUrl) {
-        this.BASE_URL = baseUrl;
-        this.axiosAPI = axios.create({ baseUrl: baseUrl })
-    }
-
-    getPlays() {
-        return this.axiosAPI.get(this.BASE_URL)
-            .then(result => result.data)
-            .catch(error => console.log(error))
-    }
-}
-
-
-
 const playMiddleware = (song) => {
 
     const apiMethods = new APIHandler(`http://damage-sound.herokuapp.com/api/play/${song.getAttribute('songID')}`)
 
-    apiMethods.getPlays()
+    apiMethods.getInfo()
         .then(response => {
             console.log(response)
         })
