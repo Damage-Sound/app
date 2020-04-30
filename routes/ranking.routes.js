@@ -7,8 +7,6 @@ const User = require('../models/user.model');
 const Playlist = require('../models/playlist.model')
 
 
-
-
 router.get('/', (req, res) => res.render('ranking'))
 
 router.post('/likes', (req, res, next) => {
@@ -36,8 +34,4 @@ router.get('/like-it', (req, res, next) => {
       .catch(error => next(error))
 })
 
-
-
 module.exports = router
-
-//forEach(elm => console.log(parseInt(elm.plays.total), elm.name)))

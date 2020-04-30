@@ -135,16 +135,31 @@ audio {
     border-bottom: 1px solid #b8b8b8;
 }
 
-.btn-rank {
-    margin-bottom: 10px;
-}
 
-.img-rank {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
 
 .albums-artist-row {
     margin: 30px 0 60px 0;
+}
+
+//----RANKING-----
+.btn-rank {
+    margin-bottom: 10px;
+
+}
+
+.song-cover{
+    width: 150px;
+    border-radius: 5px;
+}
+
+.col-songs{
+    margin: 0 50px 50px 0;
+}
+
+.row-rank-btns{
+    margin-bottom: 40px;
+}
+
+.title-rank{
+    text-align: center;
 }
