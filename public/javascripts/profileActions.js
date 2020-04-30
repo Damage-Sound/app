@@ -72,8 +72,8 @@ const loadSongView = (event) => {
     const songFileInput = document.createElement('input')
     songFileInput.classList += 'form-control-file'
     songFileInput.setAttribute('type', 'file')
-    songFileInput.setAttribute('id', 'songGenre')
-    songFileInput.setAttribute('name', 'songGenre')
+    songFileInput.setAttribute('id', 'songFile')
+    songFileInput.setAttribute('name', 'songFile')
 
     const songGenreSelect = document.createElement('select')
     songGenreSelect.classList += 'form-control'
@@ -102,10 +102,10 @@ const loadSongView = (event) => {
 
     formFieldsContainer.appendChild(songFileLabel)
     formFieldsContainer.appendChild(songFileInput)
-    // formFieldsContainer.appendChild(songCoverLabel)
-    // formFieldsContainer.appendChild(songFileCover)
+
     formFieldsContainer.appendChild(songNameLabel)
     formFieldsContainer.appendChild(songNameInput)
+
     formFieldsContainer.appendChild(songGenreLabel)
     formFieldsContainer.appendChild(songGenreSelect)
 
