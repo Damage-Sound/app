@@ -76,6 +76,8 @@ const loadSongView = (event) => {
 
     songGenresOptions.forEach(option => songGenreSelect.appendChild(option))
 
+    console.log(songGenresOptions)
+    console.log(typeof songGenresOptions)
 
     const songFileButton = document.createElement('button')
     songFileButton.classList += 'btn btn-primary'
