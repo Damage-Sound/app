@@ -30,6 +30,8 @@ class APIHandler {
 
 const likeMiddleware = (event) => {
 
+    console.log(event)
+
     const song = event.target
 
     event.preventDefault()
