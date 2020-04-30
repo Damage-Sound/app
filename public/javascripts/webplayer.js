@@ -13,7 +13,7 @@ const play = (event) => {
     player.src = event.target.getAttribute('media')
     console.log(player)
     likeMiddleware(event)
-    //playMiddleware(event.target)
+    //play Middleware(event.target)
     player.play()
 }
 
