@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h1>Enviar un email</h1>
+
+    <form action="/colab/{{id}}" method="post">
+
+        <div class="form-group">
+            <label for="exampleInputEmail2">Concept</label>
+            <input type="text" name="subject" class="form-control" id="exampleInputEmail2">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail3">Message</label>
+            <textarea class="form-control" name="message" id="exampleInputEmail3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Send email</button>
+    </form>
+</div>

@@ -15,23 +15,27 @@ const songContainerCreator = (song) => {
     songLikes.classList += 'song-likes'
     songLikes.innerHTML = song.likes
 
-    // const songAlbum = document.createElement('h4')
-    // songAlbum.classList += 'song-album'
-    // songAlbum.innerHTML = song.album
-    // console.log('Album CREATED')
-    // console.log(songAlbum)
-
     const playButton = document.createElement('button')
     playButton.setAttribute('type', 'submit')
     playButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'playButton')
     playButton.setAttribute('media', song.url)
+    playButton.setAttribute('songID', song._id)
     playButton.innerHTML = 'Play'
     playButton.addEventListener('click', event => play(event))
 
-    songContainer.appendChild(playButton)
+    const likeButton = document.createElement('button')
+    likeButton.setAttribute('type', 'submit')
+    likeButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'likeButton')
+    likeButton.setAttribute('media', song.url)
+    likeButton.setAttribute('songID', song._id)
+    likeButton.innerHTML = 'Like'
+    likeButton.addEventListener('click', event => like(event))
+
     songContainer.appendChild(songTitle)
     songContainer.appendChild(songPlays)
     songContainer.appendChild(songLikes)
+    songContainer.appendChild(playButton)
+    songContainer.appendChild(likeButton)
 
     //songContainer.appendChild(songAlbum)
 

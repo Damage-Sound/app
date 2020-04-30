@@ -3,3 +3,5 @@ const play = (event) => {
     player.src = event.target.getAttribute('media')
     player.play()
 }
+
+const like = (event) => likeMiddleware(event.target)

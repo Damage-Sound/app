@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const passport = require("passport")
+const axios = require('axios')
 
 const User = require("../../models/user.model")
 const Song = require('../../models/song.model')
@@ -45,15 +46,38 @@ router.get('/', (req, res, next) => {
 })
 
 
-router.get('/play', (req, res, next) => {
-    const { songID } = req.query
-Song.findById(songID)
-    .then(foundSong => {
-        const likes = foundSong.likes + 1
-        Song.findByIdAndUpdate(foundSong.id, { likes })
-    })
-    .then(response => res.json(response))
-    .catch(error => console.log(error))
+// Likes counter updater
+router.get('/like/:id', (req, res, next) => {
+
+    const songID = req.params.id
+
+    Song.findById(songID)
+        .then(foundSong => {
+            const likes = foundSong.likes + 1
+            return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
+                .then(response => response)
+                .catch(error => console.log('error: ', error))
+        })
+        .then(response => res.json(response.likes))
+        .catch(error => next(error))
+})
+
+
+// Plays counter updater
+router.get('/play/:id', (req, res, next) => {
+
+    const songID = req.params.id
+
+    Song.findById(songID)
+        .then(foundSong => {
+            const plays = foundSong.plays
+            plays.total++
+            return Song.findByIdAndUpdate(foundSong.id, {plays}, { new: true })
+                .then(response => response)
+                .catch(error => console.log('error: ', error))
+        })
+        .then(response => res.json(response.plays.total))
+        .catch(error => next(error))
 })
 
 
