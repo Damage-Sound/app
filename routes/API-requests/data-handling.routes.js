@@ -47,13 +47,15 @@ router.get('/', (req, res, next) => {
 
 router.get('/play', (req, res, next) => {
     const { songID } = req.query
-Song.findById(songID)
-    .then(foundSong => {
-        const likes = foundSong.likes + 1
-        Song.findByIdAndUpdate(foundSong.id, { likes })
-    })
-    .then(response => res.json(response))
-    .catch(error => console.log(error))
+    console.log(songID)
+
+    Song.findById(songID)
+        .then(foundSong => {
+            const likes = foundSong.likes + 1
+            Song.findByIdAndUpdate(foundSong.id, { likes })
+        })
+        .then(response => res.json(response))
+        .catch(error => console.log(error))
 })
 
 
