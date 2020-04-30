@@ -48,6 +48,8 @@ router.get('/', (req, res, next) => {
 // Likes counter updater
 router.get('/like/:id', (req, res, next) => {
 
+    console.log('HOLA')
+
     const songID = req.params.id
 
     Song.findById(songID)
