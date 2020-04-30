@@ -49,7 +49,10 @@ router.get('/', (req, res, next) => {
 // Likes counter updater
 router.get('/like/:id', (req, res, next) => {
 
+    console.log('------------------------------------------')
+
     const songID = req.params.id
+    console.log(songID)
 
     Song.findById(songID)
         .then(foundSong => {
@@ -66,7 +69,10 @@ router.get('/like/:id', (req, res, next) => {
 // Plays counter updater
 router.get('/play/:id', (req, res, next) => {
 
+    console.log('=======================================================')
+
     const songID = req.params.id
+    console.log(songID)
 
     Song.findById(songID)
         .then(foundSong => {
