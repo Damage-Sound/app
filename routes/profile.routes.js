@@ -128,6 +128,31 @@ router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resourc
 
 })
 
+
+router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
+
+    const { profileImg } = req.file
+
+    console.log('---------------------------------')
+    console.log(profileImg)
+
+    let userInfo
+
+    User.findById(req.user.id)
+        .then(foundUser => {
+            userInfo = foundUser
+            const promises = [
+                Song.find({ author: foundUser.id }),
+                Playlist.find({ author: foundUser.id }),
+                Album.find({ author: foundUser.id }),
+                User.findByIdAndUpdate(foundUser.id, { profileImg })
+            ]
+            return Promise.all(promises)
+        })
+        .then((responses) => res.render('profile', { userInfo, songs: responses[0], playlists: responses[1], albums: responses[2] }))
+        .catch(error => next(error))
+})
+
 router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
     console.log(req.file)
 })
