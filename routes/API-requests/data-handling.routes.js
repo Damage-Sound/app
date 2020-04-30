@@ -68,6 +68,10 @@ router.get('/play/:id', (req, res, next) => {
 
     const songID = req.params.id
 
+    console.log('--------------------------------------------------------')
+    console.log('ENTRA EN PLAY')
+    console.log('--------------------------------------------------------')
+
     Song.findById(songID)
         .then(foundSong => {
             const { plays } = foundSong.plays
@@ -76,7 +80,7 @@ router.get('/play/:id', (req, res, next) => {
                 .then(response => response)
                 .catch(error => console.log('error: ', error))
         })
-        .then(response => res.json(response.likes))
+        .then(response => res.json(response.plays))
         .catch(error => next(error))
 
     //     axios({
