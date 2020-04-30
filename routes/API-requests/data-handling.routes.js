@@ -69,7 +69,7 @@ router.get('/play/:id', (req, res, next) => {
 
     axios({
         method: 'post',
-        url: `/locate/`
+        url: `http://www.damage-sound.herokuapp.com/locate/`
     })
         .then(response => console.log('everything is fine', response))
         .catch(error => console.log('error locating user', error))
