@@ -41,7 +41,7 @@ const likeMiddleware = (event) => {
 
     // event.preventDefault()
 
-    const apiMethods = new APIHandler(`http://www.damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`)
+    const apiMethods = new APIHandler(`http://damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`)
     
     apiMethods.getLikes()
         .then(response => console.log(response.data))
