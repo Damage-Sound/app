@@ -78,17 +78,6 @@ router.get('/play/:id', (req, res, next) => {
         })
         .then(response => res.json(response.plays.total))
         .catch(error => next(error))
-
-
-    // Song.findById(songID)
-    //     .then(foundSong => {
-    //         const plays = foundSong.plays.total + 1
-    //         return Song.findByIdAndUpdate(foundSong.id, { plays }, { new: true })
-    //             .then(response => res.json(response))
-    //             .catch(error => console.log('error: ', error))
-    //     })
-    //     .then(response => console.log('updated', response))
-    //     .catch(error => console.log(error))
 })
 
 
