@@ -12,43 +12,18 @@ class APIHandler {
 
 }
 
-
-// apiMethods.getLikes()
-//     .then(response => console.log(response.data))
-//     .catch(error => console.log(error))
-
-
-
-// const likeMiddleware = (event) => {
-    
-//     const song = event.target
-
-//     // event.preventDefault()
-
-//     axios({
-//         method: 'get',
-//         url: `http://www.damage-sound.herokuapp.com/api/like/5ea98f3ef9b7c12555c4e793`
-//     })
-//         .then(response => console.log(response))
-//         .catch(err => console.log(err))
-// }
-
 const likeMiddleware = (event) => {
 
-    console.log(event)
-
     const song = event.target
-
-    // event.preventDefault()
 
     const apiMethods = new APIHandler(`http://damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`)
     
     apiMethods.getLikes()
-        .then(response => console.log(response))
+        .then(response => {
+            let likes = song.parentNode.childNodes[2]
+            likes.innerHTML = response
+        })
         .catch(error => console.log(error))
 }
-
-
-
 
 const like = (event) => likeMiddleware(event)
