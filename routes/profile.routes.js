@@ -123,7 +123,7 @@ router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resourc
             ]
             return Promise.all(promises)
         })
-        .then((responses) => res.render('profile', { userInfo, songs: responses[0], playlists: responses[1], albums: responses[2] , approvedMsg: 'Your song has been uploaded successfully!'}))
+        .then((responses) => res.render('profile', { userInfo, songs: responses[0], playlists: responses[1], albums: responses[2], approvedMsg: 'Your song has been uploaded successfully!' }))
         .catch(error => next(error))
 
 })
