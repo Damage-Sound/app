@@ -28,7 +28,11 @@ class APIHandler {
 //         .catch(err => console.log(err))
 // }
 
-const likeMiddleware = (song) => {
+const likeMiddleware = (event) => {
+
+    const song = event.target
+
+    event.preventDefault()
 
     const apiMethods = new APIHandler(`http://www.damage-sound.herokuapp.com/api/like/${song.getAttribute('songID')}`)
     
@@ -40,4 +44,4 @@ const likeMiddleware = (song) => {
 
 
 
-const like = (event) => likeMiddleware(event.target)
+const like = (event) => likeMiddleware(event)
