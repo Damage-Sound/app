@@ -95,16 +95,39 @@ router.get('/upload', (req, res, next) => {
     res.render('upload')
 })
 router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
-    console.log(req.file)
-    console.log('-------')
-    console.log(req.user)
-    console.log('-------')
-    console.log(req.body)
 
     const song = {
-        url,
-
+        name: req.body.songName,
+        genre: req.body.songGenre,
+        likes: 0,
+        url: req.file.url,
+        plays: {
+            total: 0,
+            locations: []
+        },
+        comments: [],
+        cover: "",
+        author: req.user.id
     }
+
+    let userInfo
+
+    Song.create(song)
+        .then(createdSong => {
+            User.findById(req.user.id)
+        })
+        .then(foundUser => {
+            userInfo = foundUser
+            const promises = [
+                Song.find({ author: foundUser.id }),
+                Playlist.find({ author: foundUser.id }),
+                Album.find({ author: foundUser.id }),
+            ]
+            return Promise.all(promises)
+        })
+        .then((responses) => res.render('profile', { userInfo, songs: responses[0], playlists: responses[1], albums: responses[2] , approvedMsg: 'Your song has been uploaded successfully!'}))
+        .catch(error => next(error))
+
 })
 
 router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
