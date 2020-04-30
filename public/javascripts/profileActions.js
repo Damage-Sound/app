@@ -63,13 +63,15 @@ const loadSongView = (event) => {
     songGenreSelect.setAttribute('id', 'songGenre')
     songGenreSelect.setAttribute('name', 'songGenre')
 
-    const songGenresOptions = genres.forEach(genre => {
-        
+    const songGenresOptions = []
+
+    genres.forEach(genre => {
+
         const genreOption = document.createElement('option')
         genreOption.setAttribute('value', genre)
         genreOption.innerHTML = genre
 
-        return genreOption
+        songGenresOptions.push(genreOption)
     })
 
     songGenresOptions.forEach(option => songGenreSelect.appendChild(option))
@@ -97,5 +99,5 @@ const loadSongView = (event) => {
 
 
     container.appendChild(formContainer)
-  
+
 }
