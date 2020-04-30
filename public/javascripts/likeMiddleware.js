@@ -23,7 +23,7 @@ const likeMiddleware = (event) => {
     
     const song = event.target
 
-    event.preventDefault()
+    // event.preventDefault()
 
     axios({
         method: 'get',
