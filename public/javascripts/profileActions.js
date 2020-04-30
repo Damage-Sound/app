@@ -93,7 +93,7 @@ const loadSongView = (event) => {
 
     formFieldsContainer.appendChild(songFileLabel)
     formFieldsContainer.appendChild(songFileInput)
-    formFieldsContainer.appendChild(songGenresOptions)
+    formFieldsContainer.appendChild(songGenreSelect)
     formFieldsContainer.appendChild(songFileCover)
 
     formContainer.appendChild(formFieldsContainer)
