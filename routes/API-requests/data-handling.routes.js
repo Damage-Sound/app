@@ -1,23 +1,12 @@
 const express = require("express")
 const router = express.Router()
-const passport = require("passport")
-const axios = require('axios')
 
 const User = require("../../models/user.model")
 const Song = require('../../models/song.model')
 const Playlist = require('../../models/playlist.model')
 const Album = require('../../models/album.model')
 
-// Login Controller
-const checkLoggedIn = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login')
-
-// Session Controller
-const isUser = id => (req, res, next) => req.user.id.includes(id)
-
-
-// router.get('/', checkLoggedIn, (req, res, next) => { // Security Check
 router.get('/', (req, res, next) => {
-    // isUser(req.query.user)(req, res, next) // Security check
 
     if ('user' in req.query) {
         User.findById(req.query.user)
@@ -42,24 +31,20 @@ router.get('/', (req, res, next) => {
             .then(foundPlaylist => res.json(foundPlaylist))
             .catch(error => next(error))
     }
-
 })
 
 
 // Likes counter updater
 router.get('/like/:id', (req, res, next) => {
 
-    console.log('------------------------------------------')
-
     const songID = req.params.id
-    console.log(songID)
 
     Song.findById(songID)
         .then(foundSong => {
             const likes = foundSong.likes + 1
             return Song.findByIdAndUpdate(foundSong.id, { likes }, { new: true })
                 .then(response => response)
-                .catch(error => console.log('error: ', error))
+                .catch(error => next(error))
         })
         .then(response => res.json(response.likes))
         .catch(error => next(error))
@@ -68,8 +53,6 @@ router.get('/like/:id', (req, res, next) => {
 
 // Plays counter updater
 router.get('/play/:id', (req, res, next) => {
-
-    console.log('=======================================================')
 
     const songID = req.params.id
     console.log(songID)
@@ -80,7 +63,7 @@ router.get('/play/:id', (req, res, next) => {
             plays.total++
             return Song.findByIdAndUpdate(foundSong.id, {plays}, { new: true })
                 .then(response => response)
-                .catch(error => console.log('error: ', error))
+                .catch(error => next(error))
         })
         .then(response => res.json(response.plays.total))
         .catch(error => next(error))
