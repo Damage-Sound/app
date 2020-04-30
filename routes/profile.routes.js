@@ -113,9 +113,7 @@ router.post('/upload/song', cloudinaryMusicUploader.single('songFile', { resourc
     let userInfo
 
     Song.create(song)
-        .then(createdSong => {
-            User.findById(req.user.id)
-        })
+        .then(() => User.findById(req.user.id))
         .then(foundUser => {
             userInfo = foundUser
             const promises = [
