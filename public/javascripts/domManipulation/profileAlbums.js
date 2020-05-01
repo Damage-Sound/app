@@ -16,7 +16,7 @@ const profileAlbums = (data) => {
         albumInfoContainer.classList += 'album-info-container'
 
         const albumCover = document.createElement('img')
-        albumCover.classList += 'album-cover'
+        albumCover.classList += 'album-cover album-cover-img coverImg'
         albumCover.setAttribute('src', album.cover)
 
         const albumTitle = document.createElement('h2')
