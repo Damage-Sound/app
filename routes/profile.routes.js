@@ -168,7 +168,7 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-router.post('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
+router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
 
     console.log('-------------------------------------------------------ENTRA')
 
