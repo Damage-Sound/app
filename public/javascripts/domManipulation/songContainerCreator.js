@@ -35,12 +35,25 @@ const songContainerCreator = (song) => {
     likeButton.innerHTML = 'Like'
     likeButton.addEventListener('click', event => like(event))
 
+    const coverButton = document.createElement('button')
+    coverButton.setAttribute('type', 'submit')
+    coverButton.classList.add('play-button-like', 'coverButton')
+    coverButton.innerHTML = 'Cover'
+
+    const coverEdit = document.createElement('a')
+    coverEdit.setAttribute('href', '/edit-cover')
+
+    coverEdit.appendChild(coverButton)
+
+
+
     songContainer.appendChild(songCover)
     songContainer.appendChild(songTitle)
     songContainer.appendChild(songPlays)
     songContainer.appendChild(songLikes)
     songContainer.appendChild(playButton)
-    songContainer.appendChild(likeButton)
+    // songContainer.appendChild(likeButton)
+    songContainer.appendChild(coverEdit)
 
     return songContainer
 }
