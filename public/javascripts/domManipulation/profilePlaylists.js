@@ -21,7 +21,7 @@ const profilePlaylists = (data) => {
         
         const linkToPlaylist = document.createElement('a')
         linkToPlaylist.classList += 'playlist-link'
-        linkToPlaylist.setAttribute('href', `http://damage-sound.herokuapp.com/playlist-detail/${playlist._id}`)
+        linkToPlaylist.setAttribute('href', `http://damage-sound.herokuapp.com/playlist/${playlist._id}`)
         
         linkToPlaylist.appendChild(playlistContainer)
         container.appendChild(linkToPlaylist)
