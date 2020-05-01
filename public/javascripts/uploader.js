@@ -1,6 +1,3 @@
-// const cloudinaryMusicUploader = require('../../configs/cloudinaryMusic.config')
-import {cloudinaryMusicUploader} from '../javascripts/cloudinaryMusic.config'
-
 window.onload = () => {
 
     console.log('windows loaded')

@@ -35,8 +35,11 @@ const loadSongView = (event) => {
         container.removeChild(container.firstChild)
     }
 
+    const formRow = document.createElement('div')
+    formRow.classList += 'row justify-content-center'
+
     const formContainer = document.createElement('div')
-    formContainer.classList += 'form-container'
+    formContainer.classList += 'form-container col-md-6'
 
     const uploadSongForm = document.createElement('form')
     uploadSongForm.classList += 'upload-song-form'
@@ -106,13 +109,12 @@ const loadSongView = (event) => {
     formFieldsContainer.appendChild(songNameInput)
     formFieldsContainer.appendChild(songGenreLabel)
     formFieldsContainer.appendChild(songGenreSelect)
-    
+
     uploadSongForm.appendChild(formFieldsContainer)
     uploadSongForm.appendChild(songFileButton)
 
     formContainer.appendChild(uploadSongForm)
-
-
-    container.appendChild(formContainer)
+    formRow.appendChild(formContainer)
+    container.appendChild(formRow)
 
 }
