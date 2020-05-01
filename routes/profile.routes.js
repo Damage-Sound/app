@@ -161,6 +161,13 @@ router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile
 //     console.log(req.file)
 // })
 
-router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => res.render('edit-cover', {song: req.params.id}))
+router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
+
+    Song.findById(req.params.id)
+        .then(foundSong => res.render('edit-cover', foundSong))
+        .catch(error => next(error))
+
+
+})
 
 module.exports = router
