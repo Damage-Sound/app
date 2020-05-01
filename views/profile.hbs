@@ -1,7 +1,7 @@
 <div class="profile-options">
 
     <section>
-        <div class="profile-options-navigation">
+        <div class="profile-options-navigation col-sm-4">
             <nav>
                 <ul class="nav-actions">
                     <li user="{{userInfo.id}}" api="playlists" id="nav-playlists">Playlists</li>
@@ -15,34 +15,35 @@
             </nav>
         </div>
 
-        <div class="profile-info">
-            <figure class="profileImg-container">
-                <img class="profileImg" src="{{userInfo.profileImg}}" alt="Profile Logo">
-            </figure>
-
-            <form method="POST" action="/profile/upload/profile-picture/{{userInfo.id}}" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="imgFile">Upload a Picture</label>
-                    <input type="file" class="form-control-file" id="imgFile" name="imgFile">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+        <div class="profile-picture-container col-sm-4">
+            <div class="profile-info">
+                <figure class="profileImg-container">
+                    <img class="profileImg" src="{{userInfo.profileImg}}" alt="Profile Logo">
+                </figure>
+            
+                <form method="POST" action="/profile/upload/profile-picture/{{userInfo.id}}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="imgFile">Upload a Picture</label>
+                        <input type="file" class="form-control-file" id="imgFile" name="imgFile">
+                    </div>
+                    <button type="submit" class="btn btn-dark">Upload</button>
+                </form>
+        </div>
 
             <article class="profileInfo-container">
                 <p class="name">{{userInfo.username}}</p>
-                <p class="name">{{userInfo.likes}}</p>
-                <p class="name">{{userInfo.followers.total}}</p>
+                <p class="likes">{{userInfo.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
             </article>
         </div>
 
-        <div class="profile-upload-song">
-            <article>
-                <button id="upload-song-button">Upload Song</button>
+        <div class="profile-upload-song col-sm-4 justify-content-end">
+            <article class="col-sm-8">
+                <button class="play-button-like" id="upload-song-button">Upload Song</button>
             </article>
         </div>
     </section>
 </div>
-
+    <hr class="profile-section-separation">
 <div class="profile-actions">
     {{#if approvedMsg}}
     <h3 class="approvedMsg">{{approvedMsg}}</h3>

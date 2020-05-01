@@ -221,3 +221,91 @@ audio {
     padding: 0;
     margin: 0;
 }
+
+
+
+// Profile
+
+.profile-options {
+    margin-bottom: 80px;
+}
+
+.profile-options section {
+    display: flex;
+
+    .profile-options-navigation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .nav-actions {
+        font-size: 1.2em;
+        list-style-type: none;
+        padding-top: 10%;
+
+        li {
+            margin: 10px;
+        }
+        li:hover {
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+    }
+
+    .profile-picture-container {
+        display: flex;
+
+        .profileImg-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        
+        form  {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.7em;
+
+            input {
+                font-size: 1em;
+            }
+
+            button {
+                font-size: 0.95em;
+            }
+
+        }
+
+        .profileInfo-container {
+            padding-top: 10%;
+        }
+        .profileInfo-container .name {
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+         .profileInfo-container .likes {
+            font-weight: 400;
+        }
+    }
+
+    .profile-upload-song {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        text-align: center;
+
+    }
+}
+
+.profile-section-separation {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #333, #ccc, #333);
+}
+
