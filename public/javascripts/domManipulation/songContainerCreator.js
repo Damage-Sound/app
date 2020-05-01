@@ -41,7 +41,7 @@ const songContainerCreator = (song) => {
     coverButton.innerHTML = 'Cover'
 
     const coverEdit = document.createElement('a')
-    coverEdit.setAttribute('href', '/edit-cover')
+    coverEdit.setAttribute('href', `/profile/edit-cover/${song._id}`)
 
     coverEdit.appendChild(coverButton)
 

@@ -153,12 +153,14 @@ router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile
         .catch(error => next(error))
 })
 
-router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
-    console.log(req.file)
-})
+// router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
+//     console.log(req.file)
+// })
 
-router.post('/img', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
-    console.log(req.file)
-})
+// router.post('/img', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
+//     console.log(req.file)
+// })
+
+router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => res.render('edit-cover', {song: req.params.id}))
 
 module.exports = router
