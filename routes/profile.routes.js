@@ -180,7 +180,7 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
 router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
 
-    const songCover = req.file.url
+    const songCover = req.file
 
     console.log('---------------------------------')
     console.log(songCover)
