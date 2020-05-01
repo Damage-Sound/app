@@ -5,7 +5,7 @@
         <div class="col-md-5">
 
             <div class="row">
-                <img src="{{cover}}" alt="cover">
+                <img  src="{{cover}}" alt="cover">
             </div>
 
             <div class="row">
@@ -39,9 +39,10 @@
 
     <div class="row">
 
-        <ul>
-                {{#each songs}}
 
+
+                {{#each songs}}
+                    <div class="col-md-4">
                     <div class="song-container">
                         <img src="{{cover}}" alt="song cover" class="song-cover">
                         <h3 class="song-title">{{name}}</h3>
@@ -51,8 +52,10 @@
                         <button class="play-button-like playButton" media="{{url}}" songID="{{id}}">Play</button>
                         <button class="play-button-like likeButton" media="{{url}}" songID="{{id}}">Like</button>
                     </div>
+
+                    </div>
                 {{/each}}
-        </ul>
+        
 
 
     </div>
