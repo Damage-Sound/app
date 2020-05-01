@@ -36,7 +36,7 @@ const loadSongView = (event) => {
     }
 
     const formRow = document.createElement('div')
-    formRow.classList += 'row justify-content-center'
+    formRow.classList += 'row flex-column'
 
     const formContainer = document.createElement('div')
     formContainer.classList += 'form-container col-md-8'
