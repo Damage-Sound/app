@@ -168,13 +168,39 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
+// router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
+
+//     console.log('-------------------------------------------------------ENTRA')
+
+//     Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
+//         .then(() => res.redirect('/profile'))
+//         .catch(error => next(error))
+// })
+
+
 router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
 
-    console.log('-------------------------------------------------------ENTRA')
+    const profileImg = req.file.url
 
-    Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
-        .then(() => res.redirect('/profile'))
-        .catch(error => next(error))
+    console.log('---------------------------------')
+    console.log(profileImg)
+
+    let userInfo
+
+    // User.findById(req.user.id)
+    //     .then(foundUser => {
+    //         userInfo = foundUser
+    //         const promises = [
+    //             Song.find({ author: foundUser.id }),
+    //             Playlist.find({ author: foundUser.id }),
+    //             Album.find({ author: foundUser.id }),
+    //             User.findByIdAndUpdate(foundUser.id, { profileImg })
+    //         ]
+    //         return Promise.all(promises)
+    //     })
+    //     .then((responses) => res.redirect('/profile'))
+    //     .catch(error => next(error))
 })
+
 
 module.exports = router
