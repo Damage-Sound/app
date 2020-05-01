@@ -96,6 +96,7 @@ const loadSongView = (event) => {
     songFileButton.classList += 'btn play-button-like'
     songFileButton.innerHTML = 'Upload Song'
     songFileButton.setAttribute('type', 'submit')
+    songFileButton.addEventListener('click', event => loadingMessage(event))
 
     const songFileCover = document.createElement('input')
     songFileCover.classList += 'form-control-file'
@@ -116,5 +117,16 @@ const loadSongView = (event) => {
     formContainer.appendChild(uploadSongForm)
     formRow.appendChild(formContainer)
     container.appendChild(formRow)
+}
 
+
+const loadingMessage = event => {
+
+    const form = document.querySelector('.upload-song-form')
+
+    const loadingMessage = document.createElement('p')
+    loadingMessage.classList += 'approvedMsg'
+    loadingMessage.innerHTML += 'Please, wait until the song is uploaded, please, do not reload the page...'
+
+    form.appendChild(loadingMessage)
 }
