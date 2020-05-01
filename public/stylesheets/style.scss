@@ -48,7 +48,7 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: white;
+    color: $cultured;
 }
 
 .a-buttons {
@@ -103,6 +103,14 @@ a:hover {
     text-align: center;
     align-content: center;
     margin-top: 5px;
+    color: $cultured
+}
+.play-button-like:hover{
+    background-color: #343a40;
+    border: none;
+    padding: 2px 10px;
+    text-align: center;
+    border: 2px solid  #343a40;
 }
 
 .play-button-song {
@@ -321,4 +329,8 @@ audio {
 
 .about {
     margin: 150px 0;
+//----LOGIN-----
+
+.btn-lg{
+    background-color: $middle-red;
 }
