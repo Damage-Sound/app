@@ -103,7 +103,8 @@ a:hover {
     text-align: center;
     align-content: center;
     margin-top: 5px;
-    color: $cultured
+    color: #1A1A1A;
+    font-weight: 300;
 }
 .play-button-like:hover{
     background-color: #343a40;
@@ -111,6 +112,8 @@ a:hover {
     padding: 2px 10px;
     text-align: center;
     border: 2px solid  #343a40;
+    color: $middle-red;
+    font-weight: 300;
 }
 
 .play-button-song {
