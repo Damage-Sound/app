@@ -166,8 +166,13 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
     Song.findById(req.params.id)
         .then(foundSong => res.render('edit-cover', foundSong))
         .catch(error => next(error))
+})
 
+router.post('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
+    Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
+        .then(() => res.redirect('/profile'))
+        .catch(error => next(error))
 })
 
 module.exports = router
