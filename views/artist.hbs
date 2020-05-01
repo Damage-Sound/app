@@ -2,8 +2,16 @@
 
     <div class="row">
 
-        <img class='profileImg' src="{{user.profileImg}}" alt="Profile Image">
-        <h3>{{user.username}}</h3>
+        <div class="col-md-2">
+            <img class='profileImg' src="{{user.profileImg}}" alt="Profile Image"> <br>
+            <small>{{user.location}}</small> <hr>
+        </div>
+
+        <div class="col-md-10">
+            <h3>{{user.username}}</h3>
+            <a class="a-buttons" href="/colab/{{user.id}}">Ask for collaboration</a>
+        </div>
+
 
     </div>
     <div class="row">
@@ -55,9 +63,7 @@
                 <h4 class="song-title">{{this.name}}</h4>
                 <p class="song-plays">{{this.plays.total}} <img class="flaticon-img play-img" src="/images/play.svg" alt="like"></p>
                 <p class="song-likes">{{this.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
-                <button class="play-button-like"
-                    media="https://res.cloudinary.com/damage-sound/video/upload/v1588010871/songs/gwdmguxrwbilyhzgknji.mp3"
-                    songid="{{this.id}}">Play</button>
+                <button class="play-button-like" media="{{this.url}}" songid="{{this.id}}">Play</button>
                 <button class="play-button-like" songid="{{this.id}}">Like</button>
             
             </div>
@@ -65,7 +71,7 @@
         </div>
 
 
-   
+
 
 
 

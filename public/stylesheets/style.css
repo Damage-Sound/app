@@ -19,9 +19,11 @@ h5 {
 .navbar-dark .navbar-nav .nav-link {
   color: #F1F3F4; }
 
-.navbar-brand img {
-  width: 150px;
-  margin-left: 150px; }
+.navbar-brand {
+  padding: 0; }
+  .navbar-brand img {
+    width: 150px;
+    margin-left: 150px; }
 
 button {
   text-align: center;
@@ -41,7 +43,8 @@ a:hover {
   color: #F38D68;
   border: 2px solid #F38D68;
   border-radius: 3px;
-  padding: 2px 5px; }
+  padding: 2px 5px;
+  margin: 10px 5px; }
 
 .music-player {
   position: fixed;
@@ -64,7 +67,8 @@ a:hover {
 .profileImg {
   width: 100px;
   background-color: #511845;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin: 10px; }
 
 .coverImg {
   width: 200px;
@@ -86,7 +90,9 @@ a:hover {
 
 .list-button {
   display: block;
-  width: 100%; }
+  width: 100%;
+  color: #F38D68;
+  border-bottom: 1px solid #F38D68; }
 
 .playImg {
   width: 60px; }
@@ -121,8 +127,14 @@ audio {
 .discover-container ul {
   list-style: none; }
 
+.song-container {
+  margin: 50px 0; }
+  .song-container .play-button-like {
+    margin: 5px 15px; }
+
 .discover-card {
   margin-bottom: 40px;
+  padding: 10px;
   border-bottom: 1px solid #b8b8b8; }
 
 .albums-artist-row {
@@ -133,7 +145,8 @@ audio {
 
 .song-cover {
   width: 150px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-bottom: 10px; }
 
 .col-songs {
   margin: 0 50px 50px 0; }
