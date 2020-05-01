@@ -16,7 +16,7 @@ const profileView = (view, data) => {
 
         case 'songs':
             const songsRow = document.createElement('div')
-            songsRow.classList += 'albums-artist-row'
+            songsRow.classList += 'row albums-artist-row'
             data.forEach(song => songsRow.appendChild(songContainerCreator(song)))
             container.appendChild(songsRow)
             break

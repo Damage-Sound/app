@@ -64,8 +64,8 @@
                 <h4 class="song-title">{{this.name}}</h4>
                 <p class="song-plays">{{this.plays.total}} <img class="flaticon-img play-img" src="/images/play.svg" alt="like"></p>
                 <p class="song-likes">{{this.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
-                <button class="play-button-like" media="{{this.url}}" songid="{{this.id}}">Play</button>
-                <button class="play-button-like" songid="{{this.id}}">Like</button>
+                <button class="play-button-like playButton" media="{{this.url}}" songid="{{this.id}}">Play</button>
+                <button class="play-button-like likeButton" songid="{{this.id}}">Like</button>
             
             </div>
             {{/each}}

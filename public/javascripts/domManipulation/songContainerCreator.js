@@ -21,7 +21,7 @@ const songContainerCreator = (song) => {
 
     const playButton = document.createElement('button')
     playButton.setAttribute('type', 'submit')
-    playButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'playButton')
+    playButton.classList.add('play-button-like', 'playButton')
     playButton.setAttribute('media', song.url)
     playButton.setAttribute('songID', song._id)
     playButton.innerHTML = 'Play'
@@ -29,7 +29,7 @@ const songContainerCreator = (song) => {
 
     const likeButton = document.createElement('button')
     likeButton.setAttribute('type', 'submit')
-    likeButton.classList.add('btn', 'btn-dark', 'btn-block', 'btn-lg', 'likeButton')
+    likeButton.classList.add('play-button-like', 'likeButton')
     likeButton.setAttribute('media', song.url)
     likeButton.setAttribute('songID', song._id)
     likeButton.innerHTML = 'Like'
