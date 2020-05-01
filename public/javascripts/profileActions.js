@@ -39,10 +39,10 @@ const loadSongView = (event) => {
     formRow.classList += 'row justify-content-center'
 
     const formContainer = document.createElement('div')
-    formContainer.classList += 'form-container col-md-6'
+    formContainer.classList += 'form-container col-md-8'
 
     const uploadSongForm = document.createElement('form')
-    uploadSongForm.classList += 'upload-song-form'
+    uploadSongForm.classList += 'upload-song-form row'
     uploadSongForm.setAttribute('method', 'POST')
     uploadSongForm.setAttribute('action', 'profile/upload/song')
     uploadSongForm.setAttribute('enctype', 'multipart/form-data')
@@ -93,8 +93,8 @@ const loadSongView = (event) => {
     })
 
     const songFileButton = document.createElement('button')
-    songFileButton.classList += 'btn btn-primary'
-    songFileButton.innerHTML = 'Submit'
+    songFileButton.classList += 'btn play-button-like'
+    songFileButton.innerHTML = 'Upload Song'
     songFileButton.setAttribute('type', 'submit')
 
     const songFileCover = document.createElement('input')
