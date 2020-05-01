@@ -170,6 +170,8 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
 router.post('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
+    console.log('-------------------------------------------------------ENTRA')
+
     Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
         .then(() => res.redirect('/profile'))
         .catch(error => next(error))
