@@ -1,7 +1,7 @@
 const songContainerCreator = (song) => {
 
     const songContainer = document.createElement('div')
-    songContainer.classList += 'song-container'
+    songContainer.classList += 'song-container col-md-3'
 
     const songCover = document.createElement('img')
     songCover.classList += 'song-cover'
@@ -13,11 +13,11 @@ const songContainerCreator = (song) => {
 
     const songPlays = document.createElement('p')
     songPlays.classList += 'song-plays'
-    songPlays.innerHTML = song.plays.total
+    songPlays.innerHTML = `${song.plays.total} <img class="flaticon-img play-img" src="/images/play.svg" alt="like">`
 
     const songLikes = document.createElement('p')
     songLikes.classList += 'song-likes'
-    songLikes.innerHTML = song.likes
+    songLikes.innerHTML = `${song.likes} <img class="flaticon-img" src="/images/heart2.svg" alt="like">`
 
     const playButton = document.createElement('button')
     playButton.setAttribute('type', 'submit')
@@ -41,8 +41,6 @@ const songContainerCreator = (song) => {
     songContainer.appendChild(songLikes)
     songContainer.appendChild(playButton)
     songContainer.appendChild(likeButton)
-
-    //songContainer.appendChild(songAlbum)
 
     return songContainer
 }

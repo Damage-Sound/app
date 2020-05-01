@@ -9,13 +9,16 @@ const profileView = (view, data) => {
         case 'playlists':
             profilePlaylists(data)
             break
-        
+
         case 'albums':
             profileAlbums(data)
             break
 
         case 'songs':
-            data.forEach(song => container.appendChild(songContainerCreator(song)))
+            const songsRow = document.createElement('div')
+            songsRow.classList += 'albums-artist-row'
+            data.forEach(song => songsRow.appendChild(songContainerCreator(song)))
+            container.appendChild(songsRow)
             break
 
         case 'error':
