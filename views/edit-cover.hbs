@@ -1,13 +1,13 @@
 <div class="row justify-content-center">
     {{#if url}}
     <figure>
-        <img src="{{url}}" alt="song cover" class="song-cover">
+        <img src="{{cover}}" alt="song cover" class="song-cover">
     </figure>
     {{/if}}
 </div>
 <div class="row justify-content-center">
     <div class="form-container-col-md-8">
-        <form action="/{{id}}" method="POST" class="edit-cover-form row flex-colum" enctype="multipart/form-data">
+        <form action="/profile/edit-cover/{{id}}" method="POST" class="edit-cover-form row flex-colum" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="songCover">Choose Your Song Cover</label>
                 <input class="form-control-file" type="file" id="songCover" name="songCover">

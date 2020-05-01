@@ -180,10 +180,10 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
 router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
 
-    const profileImg = req.file.url
+    const songCover = req.file.url
 
     console.log('---------------------------------')
-    console.log(profileImg)
+    console.log(songCover)
 
     let userInfo
 
@@ -194,7 +194,7 @@ router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resourc
     //             Song.find({ author: foundUser.id }),
     //             Playlist.find({ author: foundUser.id }),
     //             Album.find({ author: foundUser.id }),
-    //             User.findByIdAndUpdate(foundUser.id, { profileImg })
+    //             User.findByIdAndUpdate(foundUser.id, { cover: profileImg })
     //         ]
     //         return Promise.all(promises)
     //     })
