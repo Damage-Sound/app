@@ -26,7 +26,7 @@
 
         {{#each albums}}
         <div class="col-md-3">
-            <a href="http://damage-sound.herokuapp.com/album/{{this.id}}">
+            <a href="/album/{{this.id}}">
                 <article class="album-container">
                     <figure class="album-cover-container"><img src="{{this.cover}}" alt="album cover"
                             class="album-cover-img coverImg"></figure>
@@ -43,7 +43,7 @@
 
         {{#each playlists}}
         <div class="col-md-3">
-            <a href="http://damage-sound.herokuapp.com/playlist/{{this.id}}">
+            <a href="/playlist/{{this.id}}">
                 <article class="playlist-container">
                     <h4 class="playlist-title">{{this.name}}</h4>
                 </article>
@@ -70,7 +70,7 @@
             </div>
             {{/each}}
         </div>
-        {{/each}}
+        
     </div>
 
 
