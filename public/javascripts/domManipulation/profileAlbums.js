@@ -1,11 +1,13 @@
 const profileAlbums = (data) => {
 
     const container = document.querySelector('.profile-actions')
+    const albumsRow = document.createElement('div')
+    albumsRow.classList += 'row albums-row'
 
     data.forEach(album => {
 
         const albumContainer = document.createElement('div')
-        albumContainer.classList += 'album-container'
+        albumContainer.classList += 'album-container col-md-3'
 
         const albumCoverContainer = document.createElement('div')
         albumCoverContainer.classList += 'album-cover-container'
@@ -43,6 +45,8 @@ const profileAlbums = (data) => {
         albumContainer.appendChild(albumCoverContainer)
         albumContainer.appendChild(albumInfoContainer)
 
-        container.appendChild(albumContainer)
+        albumsRow.appendChild(albumContainer)
     })
+
+    container.appendChild(albumsRow)
 }
