@@ -36,13 +36,13 @@ const loadSongView = (event) => {
     }
 
     const formRow = document.createElement('div')
-    formRow.classList += 'row flex-column'
+    formRow.classList += 'row justify-content-center'
 
     const formContainer = document.createElement('div')
     formContainer.classList += 'form-container col-md-8'
 
     const uploadSongForm = document.createElement('form')
-    uploadSongForm.classList += 'upload-song-form row'
+    uploadSongForm.classList += 'upload-song-form row flex-column'
     uploadSongForm.setAttribute('method', 'POST')
     uploadSongForm.setAttribute('action', 'profile/upload/song')
     uploadSongForm.setAttribute('enctype', 'multipart/form-data')
