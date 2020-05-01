@@ -83,14 +83,6 @@ router.get('/following', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-// router.get('/statistics', checkLoggedIn, (req, res, next) => {
-
-//     Playlist.find({ author: req.user.id })
-//         .then(foundPlaylists => res.json(foundPlaylists))
-//         .catch(error => next(error))
-// })
-
-
 router.get('/upload', (req, res, next) => {
     res.render('upload')
 })
@@ -153,14 +145,6 @@ router.post('/upload/profile-picture/:id', cloudinaryImgUploader.single('imgFile
         .catch(error => next(error))
 })
 
-// router.post('/upload/song-cover', cloudinaryMusicUploader.single('songFile', { resource_type: 'raw' }), (req, res, next) => {
-//     console.log(req.file)
-// })
-
-// router.post('/img', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
-//     console.log(req.file)
-// })
-
 router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
     Song.findById(req.params.id)
@@ -168,22 +152,11 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
         .catch(error => next(error))
 })
 
-// router.post('/edit-cover/:id', cloudinaryImgUploader.single('imgFile', { resource_type: 'raw' }), (req, res, next) => {
-
-//     console.log('-------------------------------------------------------ENTRA')
-
-//     Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
-//         .then(() => res.redirect('/profile'))
-//         .catch(error => next(error))
-// })
-
-
 router.post('/edit-cover/:id', cloudinaryImgUploader.single('songCover', { resource_type: 'raw' }), (req, res, next) => {
 
     Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
         .then(() => res.redirect('/profile'))
         .catch(error => next(error))
 })
-
 
 module.exports = router
