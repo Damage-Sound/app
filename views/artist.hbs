@@ -2,8 +2,16 @@
 
     <div class="row">
 
-        <img class='profileImg' src="{{user.profileImg}}" alt="Profile Image">
-        <h3>{{user.username}}</h3>
+        <div class="col-md-2">
+            <img class='profileImg' src="{{user.profileImg}}" alt="Profile Image"> <br>
+            <small>{{user.location}}</small> <hr>
+        </div>
+
+        <div class="col-md-10">
+            <h3>{{user.username}}</h3>
+            <a class="a-buttons" href="/colab/{{user.id}}">Ask for collaboration</a>
+        </div>
+
 
     </div>
     <div class="row">
@@ -46,22 +54,21 @@
 
     </div>
 
+    
 
+        <h3>Songs</h3>
+        <div class="row album-artist-row">
+            {{#each songs}}
+            <div class="col-md-3">
 
-    <h3>Songs</h3>
-    <div class="row album-artist-row">
-        {{#each songs}}
-        <div class="col-md-3">
-
-            <h4 class="song-title">{{this.name}}</h4>
-            <p class="song-plays">{{this.plays.total}} <img class="flaticon-img play-img" src="/images/play.svg"
-                    alt="like"></p>
-            <p class="song-likes">{{this.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
-            <button class="play-button-like playButton"
-                media="{{this.url}}"
-                songid="{{this.id}}">Play</button>
-            <button class="play-button-like likeButton" songid="{{this.id}}">Like</button>
-
+                <h4 class="song-title">{{this.name}}</h4>
+                <p class="song-plays">{{this.plays.total}} <img class="flaticon-img play-img" src="/images/play.svg" alt="like"></p>
+                <p class="song-likes">{{this.likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
+                <button class="play-button-like" media="{{this.url}}" songid="{{this.id}}">Play</button>
+                <button class="play-button-like" songid="{{this.id}}">Like</button>
+            
+            </div>
+            {{/each}}
         </div>
         {{/each}}
     </div>

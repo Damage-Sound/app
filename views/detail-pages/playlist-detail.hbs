@@ -2,37 +2,46 @@
 
     <div class="row">
 
-        <div class="col">
+            <div class="col-md-3">
 
-            <img src="{{author.profileImg}}" alt="img">
-            <h4>{{name}}</h4>
-            <small>{{author.name}}</small> <small>{{likes}}</small>
-        </div>
-        <div class="col">
+            <img class="profileImg" src="{{author.profileImg}}" alt="img"> <br>
+            <h4>{{name}}</h4> 
+            <small>{{author.name}}</small> <small>{{likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></small>
+            
+
+            </div>
+        
+    </div>
+
+    <div class="row">
 
             {{#each songs}}
-            {{!-- <img class="coverImg" src="{{cover}}" alt="cover">
-                    <li><button type="submit" class="play-button list-button playButton" media="{{url}}">Play {{name}}</button></li>
-                    <small>{{plays.total}} plays</small><small></small>
-                    <small><button><img class="flaticon-img" src="/images/heart.svg" alt="like"></button>{{likes}}</small> --}}
-            <div class="song-container">
-                <img src="{{cover}}" alt="song cover" class="song-cover">
-                <h3 class="song-title">{{name}}</h3>
-                <p class="song-plays">{{plays.total}}</p>
-                <p class="song-likes">{{likes}}</p>
-                <p class="song-author">{{author.name}}</p>
-                <button class="btn btn-dark btn-block btn-lg playButton" media="{{url}}" songID="{{id}}">Play</button>
-                <button class="btn btn-dark btn-block btn-lg likeButton" media="{{url}}" songID="{{id}}">Like</button>
-            </div>
-            <hr>
-            {{/each}}
-            </ul>
 
-        </div>
+                <div class="col-md-4">
+            
+                    <div class="song-container">
+
+                        <img src="{{cover}}" alt="song cover" class="song-cover">
+                        <h4 class="song-title">{{name}}</h4>
+                        <p class="song-plays">{{plays.total}} <img class="flaticon-img play-img" src="/images/play.svg" alt="like"></p>
+                        <p class="song-likes">{{likes}} <img class="flaticon-img" src="/images/heart2.svg" alt="like"></p>
+                        <a href="/artist/{{author.id}}" class="song-author">{{author.name}}</a>
+                        <button class="play-button-like playButton" media="{{url}}" songID="{{id}}">Play</button>
+                        <button class="play-button-like likeButton" media="{{url}}" songID="{{id}}">Like</button>
+
+                    </div>
+
+                </div>
+            {{/each}}
+
 
     </div>
 
 
+
+
+
+   
 
 
 </div>

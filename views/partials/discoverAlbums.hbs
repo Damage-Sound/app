@@ -5,13 +5,15 @@
 
                     <img class= 'coverImg' src="{{cover}}" alt="Cover">
                     <p><button><img class="flaticon-img" src="/images/heart2.svg" alt="like"></button> {{likes}}</p>
+                    <a class="a-buttons" href="/album/{{id}}">See more...</a>
+
 
                 </div>
 
                 <div class="col-md-8">
                     <h3>{{name}}</h3>
-                    <a href="/artist/{{id}}"><p>{{author.username}}</p></a>
-                    <a href="/album/{{id}}">See more...</a>
+                    <a href="/artist/{{author.id}}"><p>{{author.username}}</p></a>
+                    <small>{{genre}}</small>
                     <ul>
                         {{#each songs}}
                             <li><button type="submit" class="play-button list-button playButton" media="{{url}}">Play {{name}}</button></li>
@@ -24,4 +26,3 @@
 
 {{/each}}
 
-    {{!-- <button type="submit" class="btn btn-dark btn-block btn-lg playButton" media="{{halo}}">Click to Play Halo</button>             --}}

@@ -1,33 +1,27 @@
 {{#each allPlaylists}}
-        <div class="discover-card">
-
-            <div class="row">
+    <div class="row discover-card">
+        
 
                 <div class="col-md-4">
-
-                    <p><button><img class="flaticon-img" src="/images/heart2.svg" alt="like"></button> {{likes}}</p>
-
- 
-                </div>
-
-                <div class="col-md-8">
                     
                     <h3>{{name}}</h3>
 
-                    <p>{{author.username}}</p>
+                    <a href="/artist/{{author.id}}">{{author.username}}</a>
+                    <p><button><img class="flaticon-img" src="/images/heart2.svg" alt="like"></button> {{likes}}</p>
+                    <a class="a-buttons" href="/playlist/{{id}}">See more...</a>
 
+                </div>
+                
+                <div class="col-md-8">
                     <ul>
                         {{#each songs}}
                             <li><button type="submit" class="play-button list-button playButton" media="{{url}}">Play {{name}}</button></li>
                         {{/each}}
                     </ul>
-                    <a href="/playlist/{{id}}">See more...</a>
                     
                 </div>
                 
-            
-            </div>
+        
 
-        </div>
-
+    </div>
 {{/each}}

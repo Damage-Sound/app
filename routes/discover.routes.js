@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require('../models/user.model')
 const Playlist = require('../models/playlist.model')
 const Album = require('../models/album.model')
-const Song = require('../models/song.model') 
+const Song = require('../models/song.model')
 
 
 
@@ -20,18 +20,31 @@ router.get('/', (req, res, next) => {
 
 router.get('/albums', (req, res, next) => {
 
+    const queriesForm = Object.keys(req.query)
 
 
-    Album.find()
-        .populate('author')
-        .populate('songs')
-        .limit(30)
-        .then(allAlbums => res.render('discover/discover', { allAlbums, destination: 'albums' }))
-        .catch(err => console.err('Can´t find the albums', err))
+    if (queriesForm.length) {
+        Album.find({ genre: { $in: queriesForm } })
+            .populate('author')
+            .populate('songs')
+            .limit(30)
+            .then(allAlbums => res.render('discover/discover', { allAlbums, destination: 'albums' }))
+            .catch(err => console.err('Can´t find the albums', err))
+
+    } else {
+
+        Album.find()
+            .populate('author')
+            .populate('songs')
+            .limit(30)
+            .then(allAlbums => res.render('discover/discover', { allAlbums, destination: 'albums' }))
+            .catch(err => console.err('Can´t find the albums', err))
+    }
 
 })
 
 router.get('/playlists', (req, res, next) => {
+
 
     Playlist.find()
         .populate('author')
@@ -39,6 +52,9 @@ router.get('/playlists', (req, res, next) => {
         .limit(30)
         .then(allPlaylists => res.render('discover/discover', { allPlaylists, destination: 'playlists' }))
         .catch(err => console.err('Can´t find the playlists', err))
+
+
+
 })
 
 router.get('/songs', (req, res, next) => {
@@ -46,7 +62,7 @@ router.get('/songs', (req, res, next) => {
     const queriesForm = Object.keys(req.query)
 
 
-    if (queriesForm.length > 0) {
+    if (queriesForm.length) {
 
         Song.find({ genre: { $in: queriesForm } })
             .populate('author')
