@@ -180,26 +180,9 @@ router.get('/edit-cover/:id', checkLoggedIn, (req, res, next) => {
 
 router.post('/edit-cover/:id', cloudinaryImgUploader.single('songCover', { resource_type: 'raw' }), (req, res, next) => {
 
-    const songCover = req.file
-
-    console.log('---------------------------------')
-    console.log(songCover)
-
-    let userInfo
-
-    // User.findById(req.user.id)
-    //     .then(foundUser => {
-    //         userInfo = foundUser
-    //         const promises = [
-    //             Song.find({ author: foundUser.id }),
-    //             Playlist.find({ author: foundUser.id }),
-    //             Album.find({ author: foundUser.id }),
-    //             User.findByIdAndUpdate(foundUser.id, { cover: profileImg })
-    //         ]
-    //         return Promise.all(promises)
-    //     })
-    //     .then((responses) => res.redirect('/profile'))
-    //     .catch(error => next(error))
+    Song.findByIdAndUpdate(req.params.id, { cover: req.file.url })
+        .then(() => res.redirect('/profile'))
+        .catch(error => next(error))
 })
 
 
