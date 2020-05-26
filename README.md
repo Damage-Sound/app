@@ -2,6 +2,8 @@
 
 DamageSound is a music social platform made to connect creators and listeners.
 
+You can access the app by clicking **[here](http://damage-sound.herokuapp.com/)**
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -67,15 +69,140 @@ $ npm run dev
 * [Nodemailer](https://nodemailer.com/about/) - NodeJs module for email sending
 
 
+## Models
+
+### User
+```javascript
+{
+
+    username: String,
+    password: String,
+    email: String,
+    profileImg: String,
+    likes: Number,
+    location: String,
+    followers: {
+        total: Number,
+        followers: [{
+            type: Schema.Types.ObjectId,
+            res: 'User'
+        }]
+    },
+    following: {
+        total: Number,
+        following: [{
+            type: Schema.Types.ObjectId,
+            res: 'User'
+        }]
+    },
+    comments: [{
+        comment: String,
+        author: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    }],
+}, {
+    timestamps: true
+}
+```
+
+### Song
+
+```javascript
+{
+
+    name: String,
+    url: String,
+    likes: Number,
+    cover: String,
+    genre: {
+        type: String,
+        enum: ['bachata', 'alternative rock', 'hard rock', 'bossa nova', 'punk', 'blues', 'classical', 'country', 'dance', 'deep house', 'dubstep', 'techno', 'house', 'trance', 'electronic', 'hip-hop', 'rap', 'indie', 'jazz', 'flamenco', 'reggaeton', 'salsa', 'meditation', 'pop', 'progressive', 'r&b', 'soul', 'reggae', 'rock', 'metal']
+    },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    plays: {
+        total: Number,
+        locations: [{
+            name: String,
+            plays: Number,
+        }]
+    },
+    comments: [{
+        comment: String,
+        author: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    }],
 
 
+}, {
+    timestamps: true
+}
+```
+
+
+### Playlist
+
+```javascript
+{
+
+    name: String,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    songs: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Song'
+    }],
+    followers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    likes: Number
+
+}
+```
+
+
+### Album
+
+```javascript
+{
+
+    name: String,
+    likes: Number,
+    cover: String,
+    genre: [{
+        type: String,
+        enum: ['bachata', 'alternative rock', 'hard rock', 'bossa nova', 'punk', 'blues', 'classical', 'country', 'dance', 'deep house', 'dubstep', 'techno', 'house', 'trance', 'electronic', 'hip-hop', 'rap', 'indie', 'jazz', 'flamenco', 'reggaeton', 'salsa', 'meditation', 'pop', 'progressive', 'r&b', 'soul', 'reggae', 'rock', 'metal']
+    }],
+    songs: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Song'
+    }],
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+}, {
+      timestamps: true
+}
+```
 
 ## Authors
 
 
-* https://github.com/orgs/Damage-Sound/people/Togeri < Gerardo Toledo
-* https://github.com/orgs/Damage-Sound/people/MadalinGeorge < Madalin George
-* https://github.com/orgs/Damage-Sound/people/JulianKizeno < Julian Quiceno
+**[Gerardo Toledo](https://github.com/Togeri)**
+
+**[Madalin George](https://github.com/orgs/Damage-Sound/people/MadalinGeorge)**
+
+**[Julian Quiceno](https://github.com/orgs/Damage-Sound/people/JulianKizeno)**
 
 
 
