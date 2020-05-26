@@ -200,9 +200,9 @@ $ npm run dev
 
 **[Gerardo Toledo](https://github.com/Togeri)**
 
-**[Madalin George](https://github.com/orgs/Damage-Sound/people/MadalinGeorge)**
+**[Madalin George](https://github.com/MadalinGeorge)**
 
-**[Julian Quiceno](https://github.com/orgs/Damage-Sound/people/JulianKizeno)**
+**[Julian Quiceno](https://github.com/JulianKizeno)**
 
 
 
