@@ -2,7 +2,7 @@
 
 DamageSound is a music social platform made to connect creators and listeners.
 
-You can access the app by clicking **[here](http://damage-sound.herokuapp.com/)**
+**You can access the app by clicking :point_right: [here](http://damage-sound.herokuapp.com/)** :point_left:
 
 ## Getting Started
 
